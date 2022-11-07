@@ -1,5 +1,6 @@
 package com.workChat.action;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.workChat.service.WorkChat;
 import com.workChat.service.WorkChatImpl;
 
@@ -21,7 +22,10 @@ public class GetIdUser extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         String Id_Str = req.getParameter("id");
         WorkChat workChat = new WorkChatImpl();
-        workChat.getIdUser(Integer.parseInt(Id_Str));
+
+        ObjectMapper om = new ObjectMapper();
+        String json = om.writeValueAsString(workChat.getIdUser(Integer.parseInt(Id_Str)));
+        resp.getWriter().print(json);
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
