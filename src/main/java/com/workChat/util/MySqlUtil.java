@@ -14,7 +14,7 @@ import java.util.List;
 public class MySqlUtil {
     //数据库连接参数
     //数据库地址
-    private static final String URL = "jdbc:mysql://mysql.lldwb.top:33366/register?serverTimezone=Asia/Shanghai";
+    private static final String URL = "jdbc:mysql://mysql.lldwb.top:33366/workchatsql?serverTimezone=Asia/Shanghai";
     //账号
     private static final String USER_NAME = "root";
     //密码
