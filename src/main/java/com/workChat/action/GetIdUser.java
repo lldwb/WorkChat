@@ -27,7 +27,7 @@ public class GetIdUser extends HttpServlet {
         String json = om.writeValueAsString(workChat.getIdUser(Integer.parseInt(Id_Str)));
         resp.getWriter().print(json);
     }
-
+    
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
     }
