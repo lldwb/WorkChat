@@ -20,6 +20,7 @@ public class WorkChatImpl implements WorkChat{
 
     @Override
     public List<User> getUnitIdUser(int UnitId) {
+        SqlDao sqlDao = new SqlDaoImpl();
         return null;
     }
 
