@@ -15,8 +15,7 @@ import java.util.List;
 public class SqlDaoImpl implements SqlDao {
     @Override
     public int addUnitIdUser(String name,String pwd,int unitId) {
-
-        return 0;
+        return MySqlUtil.update("insert into user(name,pwd,unitId) values(?,?,?)",name,pwd,unitId);
     }
 
     @Override
@@ -27,8 +26,7 @@ public class SqlDaoImpl implements SqlDao {
     @Override
     public User getIdUser(int id) {
         try {
-            MySqlUtil mySqlUtil = new MySqlUtil();
-            ResultSet rs = mySqlUtil.queryResultSet("select * from user where id=?", id);
+            ResultSet rs = MySqlUtil.queryResultSet("select * from user where id=?", id);
             User user = new User();
             if (rs.next()) {
                 user.setId(rs.getInt("id"));
