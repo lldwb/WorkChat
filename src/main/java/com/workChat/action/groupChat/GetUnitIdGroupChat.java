@@ -1,4 +1,4 @@
-package com.workChat.action;
+package com.workChat.action.groupChat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.workChat.service.WorkChat;
@@ -15,21 +15,21 @@ import java.io.IOException;
  * @author 谢世杰
  * @version 1.0
  */
-//通过Id返回User对象
-@WebServlet("/GetIdUser")
-public class GetIdUser extends HttpServlet {
+//通过单位编号返回GroupChat集合
+@WebServlet("GetUnitIdGroupChat")
+public class GetUnitIdGroupChat extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
-        String Id_Str = req.getParameter("id");
+        String unitId_Str = req.getParameter("unitId");
         WorkChat workChat = new WorkChatImpl();
 
         ObjectMapper om = new ObjectMapper();
-        String json = om.writeValueAsString(workChat.getIdUser(Integer.parseInt(Id_Str)));
-        resp.getWriter().print(json);
+//        String json = om.writeValueAsString(workChat.getIdUser(Integer.parseInt(unitId_Str)));
+//        resp.getWriter().print(json);
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req,resp);
+        this.doPost(req, resp);
     }
 }
