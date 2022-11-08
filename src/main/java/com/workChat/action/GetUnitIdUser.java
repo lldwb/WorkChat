@@ -14,6 +14,7 @@ import java.io.IOException;
  * @author 谢世杰
  * @version 1.0
  */
+//通过单位编号返回User集合
 @WebServlet("/GetUnitIdUser")
 public class GetUnitIdUser extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

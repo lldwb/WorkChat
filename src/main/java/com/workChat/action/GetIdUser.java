@@ -15,6 +15,7 @@ import java.io.IOException;
  * @author 谢世杰
  * @version 1.0
  */
+//通过Id返回User对象
 @WebServlet("/GetIdUser")
 public class GetIdUser extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
