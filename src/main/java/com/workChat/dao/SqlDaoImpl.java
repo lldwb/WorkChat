@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * @author 安然的尾巴
+ * @author 谢世杰
  * @version 1.0
  */
 public class SqlDaoImpl implements SqlDao {

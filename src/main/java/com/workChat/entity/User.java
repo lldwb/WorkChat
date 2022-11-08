@@ -1,7 +1,7 @@
 package com.workChat.entity;
 
 /**
- * @author 安然的尾巴
+ * @author 谢世杰
  * @version 1.0
  */
 public class User {
