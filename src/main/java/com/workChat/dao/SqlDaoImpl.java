@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class SqlDaoImpl implements SqlDao {
     @Override
-    public int addUnitIdUser(int unitId) {
+    public int addUnitIdUser(String name,String pwd,int unitId) {
 
         return 0;
     }

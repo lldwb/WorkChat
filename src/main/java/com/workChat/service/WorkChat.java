@@ -10,8 +10,8 @@ import java.util.List;
  * @version 1.0
  */
 public interface WorkChat {
-    //通过单位编号创建员工账号
-    int addUnitIdUser(int unitId);
+    //创建员工账号
+    int addUnitIdUser(String name,String pwd,int unitId);
     //根据id返回用户
     User getIdUser(int id);
     //根据单位编号返回用户集合 黄为东

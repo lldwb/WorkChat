@@ -1,6 +1,5 @@
 package com.workChat.action.user;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.workChat.service.WorkChat;
 import com.workChat.service.WorkChatImpl;
 
@@ -20,13 +19,15 @@ public class AddUnitIdUser extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
+        String name = req.getParameter("name");
+        String pwd = req.getParameter("pwd");
         String unitId_Str = req.getParameter("unitId");
         WorkChat workChat = new WorkChatImpl();
 
-        resp.getWriter().print(workChat.addUnitIdUser(Integer.parseInt(unitId_Str)));
+        resp.getWriter().print(workChat.addUnitIdUser(name,pwd,Integer.parseInt(unitId_Str)));
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req,resp);
+        this.doPost(req, resp);
     }
 }

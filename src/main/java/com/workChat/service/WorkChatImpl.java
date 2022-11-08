@@ -13,9 +13,9 @@ import java.util.List;
  */
 public class WorkChatImpl implements WorkChat{
     @Override
-    public int addUnitIdUser(int unitId) {
+    public int addUnitIdUser(String name,String pwd,int unitId) {
         SqlDao sqlDao = new SqlDaoImpl();
-        return sqlDao.addUnitIdUser(unitId);
+        return sqlDao.addUnitIdUser(name,pwd,unitId);
     }
 
     @Override
