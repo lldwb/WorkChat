@@ -24,7 +24,6 @@ public class GetUnitIdUser extends HttpServlet {
         String unitId_Str = req.getParameter("unitId");
         WorkChat workChat = new WorkChatImpl();
 
-
         ObjectMapper om = new ObjectMapper();
         String json = om.writeValueAsString(workChat.getUnitIdUser(Integer.parseInt(unitId_Str)));
         resp.getWriter().print(json);
