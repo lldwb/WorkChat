@@ -1,5 +1,6 @@
 package com.workChat.service;
 
+import com.workChat.entity.GroupChat;
 import com.workChat.entity.User;
 
 import java.util.List;
@@ -13,4 +14,6 @@ public interface WorkChat {
     public User getIdUser(int id);
     //根据单位编号返回用户集合
     public List<User> getUnitIdUser(int UnitId);
+    //通过单位编号返回GroupChat集合
+    public List<GroupChat> getUnitIdGroupChat(int unitId);
 }
