@@ -1,5 +1,6 @@
 package com.workChat.dao;
 
+import com.workChat.entity.GroupChat;
 import com.workChat.entity.User;
 import com.workChat.util.MySqlUtil;
 
@@ -12,6 +13,11 @@ import java.util.List;
  * @version 1.0
  */
 public class SqlDaoImpl implements SqlDao {
+    @Override
+    public List<GroupChat> getUnitIdGroupChat(int unitId) {
+        return null;
+    }
+
     @Override
     public User getIdUser(int id) {
         try {
