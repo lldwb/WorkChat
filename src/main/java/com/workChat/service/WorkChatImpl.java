@@ -13,6 +13,11 @@ import java.util.List;
  */
 public class WorkChatImpl implements WorkChat{
     @Override
+    public int addUnitIdUser(int UnitId) {
+        return 0;
+    }
+
+    @Override
     public User getIdUser(int id) {
         SqlDao sqlDao = new SqlDaoImpl();
         return sqlDao.getIdUser(id);

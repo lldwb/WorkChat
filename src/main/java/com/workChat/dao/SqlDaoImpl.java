@@ -14,6 +14,11 @@ import java.util.List;
  */
 public class SqlDaoImpl implements SqlDao {
     @Override
+    public int addUnitIdUser(int UnitId) {
+        return 0;
+    }
+
+    @Override
     public List<GroupChat> getUnitIdGroupChat(int unitId) {
         return null;
     }

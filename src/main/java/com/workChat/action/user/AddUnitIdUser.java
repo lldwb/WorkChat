@@ -25,7 +25,7 @@ public class AddUnitIdUser extends HttpServlet {
 
 
         ObjectMapper om = new ObjectMapper();
-        String json = om.writeValueAsString(workChat.getUnitIdUser(Integer.parseInt(unitId_Str)));
+        String json = om.writeValueAsString(workChat.addUnitIdUser(Integer.parseInt(unitId_Str)));
         resp.getWriter().print(json);
     }
 
