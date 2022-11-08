@@ -11,11 +11,11 @@ import java.util.List;
  */
 public interface WorkChat {
     //通过单位编号创建员工账号
-    int addUnitIdUser(int UnitId);
+    int addUnitIdUser(int unitId);
     //根据id返回用户
     User getIdUser(int id);
     //根据单位编号返回用户集合
-    List<User> getUnitIdUser(int UnitId);
+    List<User> getUnitIdUser(int unitId);
 
     //通过单位编号返回GroupChat集合
     List<GroupChat> getUnitIdGroupChat(int unitId);

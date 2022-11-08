@@ -14,7 +14,8 @@ import java.util.List;
  */
 public class SqlDaoImpl implements SqlDao {
     @Override
-    public int addUnitIdUser(int UnitId) {
+    public int addUnitIdUser(int unitId) {
+
         return 0;
     }
 
@@ -26,10 +27,10 @@ public class SqlDaoImpl implements SqlDao {
     @Override
     public User getIdUser(int id) {
         try {
-        MySqlUtil mySqlUtil = new MySqlUtil();
-        ResultSet rs = mySqlUtil.queryResultSet("select * from user where id=?",id);
+            MySqlUtil mySqlUtil = new MySqlUtil();
+            ResultSet rs = mySqlUtil.queryResultSet("select * from user where id=?", id);
             User user = new User();
-            if (rs.next()){
+            if (rs.next()) {
                 user.setId(rs.getInt("id"));
                 user.setName(rs.getString("name"));
                 user.setPwd(rs.getString("pwd"));
@@ -45,7 +46,7 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
-    public List<User> getUnitIdUser(int UnitId) {
+    public List<User> getUnitIdUser(int unitId) {
         return null;
     }
 }
