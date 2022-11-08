@@ -25,8 +25,8 @@ public class GetUnitIdGroupChat extends HttpServlet {
         WorkChat workChat = new WorkChatImpl();
 
         ObjectMapper om = new ObjectMapper();
-        String json = om.writeValueAsString(workChat.getIdUser(Integer.parseInt(unitId_Str)));
-        resp.getWriter().print(json);
+//        String json = om.writeValueAsString(workChat.getIdUser(Integer.parseInt(unitId_Str)));
+//        resp.getWriter().print(json);
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
