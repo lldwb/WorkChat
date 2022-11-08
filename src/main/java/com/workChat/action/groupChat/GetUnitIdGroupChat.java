@@ -16,7 +16,7 @@ import java.io.IOException;
  * @version 1.0
  */
 //通过单位编号返回GroupChat集合
-@WebServlet("GetUnitIdGroupChat")
+@WebServlet("/GetUnitIdGroupChat")
 public class GetUnitIdGroupChat extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
