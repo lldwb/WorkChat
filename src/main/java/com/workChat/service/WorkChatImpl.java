@@ -12,26 +12,24 @@ import java.util.List;
  * @version 1.0
  */
 public class WorkChatImpl implements WorkChat{
+    SqlDao sqlDao = new SqlDaoImpl();
     @Override
     public int addUnitIdUser(String name,String pwd,int unitId) {
-        SqlDao sqlDao = new SqlDaoImpl();
         return sqlDao.addUnitIdUser(name,pwd,unitId);
     }
 
     @Override
     public User getIdUser(int id) {
-        SqlDao sqlDao = new SqlDaoImpl();
         return sqlDao.getIdUser(id);
     }
 
     @Override
     public List<User> getUnitIdUser(int unitId) {
-        SqlDao sqlDao = new SqlDaoImpl();
-        return null;
+        return sqlDao.getUnitIdUser(unitId);
     }
 
     @Override
     public List<GroupChat> getUnitIdGroupChat(int unitId) {
-        return null;
+        return sqlDao.getUnitIdGroupChat(unitId);
     }
 }
