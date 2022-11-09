@@ -1,5 +1,5 @@
 Vue.component("mya",{
-    template : " <div style=\"background-color:#F5F5F5;\">\n" +
+    template : " <div style=\"background-color:#F5F5F5;padding-bottom: 60px\">\n" +
         "        <van-row type=\"flex\">\n" +
         "            <van-col span=\"24\" style=\"margin-bottom: 5px\"><van-cell title=\"朋友圈\" icon=\"friends-o\" is-link url=\"qyq.html\"/></van-col>\n" +
         "            <van-col span=\"24\"><van-cell title=\"视频号\" icon=\"video\" is-link url=\"#\"/></van-col>\n" +

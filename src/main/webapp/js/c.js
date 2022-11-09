@@ -3,7 +3,7 @@ Vue.component("myc",{
         return{}
         indexList: [1, 2, 3, 4, 5]
     },
-    template :"<van-row type=\"flex\" style=\"background-color:#F5F5F5;\">\n" +
+    template :"<van-row type=\"flex\" style=\"background-color:#F5F5F5;padding-bottom: 60px\">\n" +
         "        <van-index-bar :index-list=[1,2,3,4,5]>\n" +
         "\n" +
         "            <van-col span=\"24\" ><van-cell title=\"联系人\" /></van-col>\n" +
