@@ -54,7 +54,10 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public List<Chat> getUserIdChat(int userId) {
-        return null;
+        //读取id作为发送方和接收方的信息
+        List<Chat> chats = mySqlUtil.queryList(Chat.class,"select * from chat where userId=?", userId);
+        chats.addAll(mySqlUtil.queryList(Chat.class,"select * from chat where faceId=?", userId));
+        return chats;
     }
 
     @Override
