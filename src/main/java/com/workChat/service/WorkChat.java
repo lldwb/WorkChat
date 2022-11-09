@@ -15,12 +15,12 @@ public interface WorkChat {
     int addUnitIdUser(String name,String pwd,int unitId);
     //根据id返回用户
     User getIdUser(int id);
-    //根据单位编号返回用户集合 黄为东
+    //根据单位编号返回用户集合
     List<User> getUnitIdUser(int unitId);
 
     //通过Id返回单位 陈强
     Unit getIdUnit(int id);
 
-    //通过单位编号返回GroupChat集合 黄为东
+    //通过单位编号返回GroupChat集合
     List<GroupChat> getUnitIdGroupChat(int unitId);
 }
