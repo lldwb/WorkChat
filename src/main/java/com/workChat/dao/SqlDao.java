@@ -1,6 +1,8 @@
 package com.workChat.dao;
 
+import com.workChat.entity.Chat;
 import com.workChat.entity.GroupChat;
+import com.workChat.entity.Unit;
 import com.workChat.entity.User;
 
 import java.util.List;
@@ -17,6 +19,12 @@ public interface SqlDao {
     //根据单位编号返回用户集合 黄为东
     List<User> getUnitIdUser(int unitId);
 
-    //通过单位编号返回GroupChat集合
+    //通过用户id返回Chat集合
+    List<Chat> getUserIdChat(int userId);
+
+    //通过Id返回单位 陈强
+    Unit getIdUnit(int id);
+
+    //通过单位编号返回GroupChat集合 黄为东
     List<GroupChat> getUnitIdGroupChat(int unitId);
 }
