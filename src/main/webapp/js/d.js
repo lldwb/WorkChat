@@ -1,6 +1,6 @@
 Vue.component("myd",{
 
-    template : "<div id=\"metop\" type=\"flex\" style=\"background-color: #c0ccda\">\n" +
+    template : "<div id=\"metop\" type=\"flex\" style=\"background-color: #F5F5F5;width: 100%;height:540px\">\n" +
         "\n" +
         "        <van-row style=\"background-color: white;margin-bottom: 5px\">\n" +
         "            <van-col span=\"7\" style=\"height: 70px; text-align: center;margin-top: 10px\">\n" +
