@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css2/index.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js2/vue.min.js"></script>
+    <script src="js2/vant.min.js"></script>
+    <script src="js/vue-router.js"></script>
+    <script src="js/a.js"></script>
+    <script src="js/b.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+</head>
+<body>
+<div id="div1">
+<van-cell-group>
+    <van-field v-model="value" label="文本" placeholder="请输入用户名" />
+</van-cell-group>
+    <van-cell @touchstart.native.stop="show = true">弹出默认键盘</van-cell>
+    <van-number-keyboard
+            :show="show"
+            @blur="show = false"
+            @input="onInput"
+            @delete="onDelete"
+    />
+</div>
+</body>
+</html>
+<script>
+    import { Toast } from 'vant'
+new Vue({
+el: "#div1",
+data: {
+    value: '',
+    show: false,
+},
+    methods: {
+        onInput(value) {
+            Toast(value);
+        },
+        onDelete() {
+            Toast('删除');
+        },
+    },
+})
+</script>
