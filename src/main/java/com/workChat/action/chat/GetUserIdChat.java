@@ -15,7 +15,7 @@ import java.io.IOException;
  * @author 安然的尾巴
  * @version 1.0
  */
-@WebServlet(name = "GetUserIdChat")
+@WebServlet("/GetUserIdChat")
 public class GetUserIdChat extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
