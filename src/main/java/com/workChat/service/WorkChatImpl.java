@@ -32,8 +32,7 @@ public class WorkChatImpl implements WorkChat{
 
     @Override
     public List<Chat> getUserIdChat(int userId) {
-        List<Chat> chats = sqlDao.getUserIdChat(userId);
-        return chats;
+        return sqlDao.getUserIdChat(userId);
     }
 
     @Override
