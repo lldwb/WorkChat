@@ -1,4 +1,8 @@
 Vue.component("myc",{
+    data(){
+        return{}
+        indexList: [1, 2, 3, 4, 5]
+    },
     template :"<van-row type=\"flex\" style=\"background-color:#F5F5F5;\">\n" +
         "        <van-index-bar :index-list=[1,2,3,4,5]>\n" +
         "\n" +
