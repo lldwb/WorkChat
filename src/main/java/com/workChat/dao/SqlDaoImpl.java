@@ -22,24 +22,8 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public List<GroupChat> getUnitIdGroupChat(int unitId) {
-
-        try {
-            ResultSet rs = MySqlUtil.queryResultSet("select * from groupChat where id=?", unitId);
-            List<GroupChat> groupChatList = new ArrayList<>();
-            while (rs.next()){
-                GroupChat groupChat = new GroupChat();
-                groupChat.setId(rs.getInt("id"));
-                groupChat.setUserId(rs.getInt("userId"));
-                groupChat.setUnitId(rs.getInt("unitId"));
-                groupChat.setTime(rs.getTimestamp("time"));
-                groupChat.setWord(rs.getString("word"));
-                groupChatList.add(groupChat);
-            }
-            return groupChatList;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        MySqlUtil mySqlUtil = new MySqlUtil();
+        return mySqlUtil.queryList(GroupChat.class,"select * from groupChat where id=?", unitId);
     }
 
     @Override
