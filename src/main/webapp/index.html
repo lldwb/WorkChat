@@ -95,10 +95,20 @@
             indexList: [1, 2, 3, 4, 5],
         },
         methods: {
+            show1(){
+                this.$router.push({
+                    name:"/a2",
+                    query:{
+                        listw:this.indexList,
+                    }
+                })
+
+            }
         },
         mounted(){
             this.container = this.$refs.container;
         },
+
         router
     })
 </script>

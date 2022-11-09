@@ -1,12 +1,14 @@
 Vue.component("myc",{
     data(){
-        return{}
-        indexList: [1, 2, 3, 4, 5]
+        return{
+            listw:this.$route.query.listw,
+        }
+
     },
     template :"<van-row type=\"flex\" style=\"background-color:#F5F5F5;padding-bottom: 60px\">\n" +
-        "        <van-index-bar :index-list=[1,2,3,4,5]>\n" +
+        "        <van-index-bar :index-list=listw>\n" +
         "\n" +
-        "            <van-col span=\"24\" ><van-cell title=\"联系人\" /></van-col>\n" +
+        "        <van-col span=\"24\" ><van-cell title=\"联系人\" /></van-col>\n" +
         "        <van-col span=\"24\" ><van-index-anchor index=\"1\">杰</van-index-anchor></van-col>\n" +
         "        <van-col span=\"24\" ><van-cell title=\"杰1\" /></van-col>\n" +
         "        <van-col span=\"24\" ><van-cell title=\"杰2\" /></van-col>\n" +
