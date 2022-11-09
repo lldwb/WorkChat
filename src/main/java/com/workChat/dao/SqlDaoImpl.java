@@ -62,6 +62,20 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public Unit getIdUnit(int id) {
-        return null;
+        ResultSet rs = mySqlUtil.queryResultSet("select * from user where id=?",id);
+        Unit unit = new Unit();
+        try {
+            if(rs.next()){
+                unit.setId(rs.getInt("id"));
+                unit.setName(rs.getString("name"));
+                unit.setUserId(rs.getInt("userId"));
+                unit.setRemark(rs.getString("remark"));
+                rs.close();
+            }
+            return unit;
+        } catch (SQLException e) {
+            return null;
+
+        }
     }
 }
