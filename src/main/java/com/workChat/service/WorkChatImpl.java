@@ -37,7 +37,7 @@ public class WorkChatImpl implements WorkChat{
 
     @Override
     public Unit getIdUnit(int id) {
-        return null;
+        return sqlDao.getIdUnit(id);
     }
 
     @Override
