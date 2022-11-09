@@ -16,7 +16,6 @@ public interface WorkChat {
     User getIdUser(int id);
     //根据单位编号返回用户集合 黄为东
     List<User> getUnitIdUser(int unitId);
-
-    //通过单位编号返回GroupChat集合
+    //通过单位编号返回GroupChat集合 黄为东
     List<GroupChat> getUnitIdGroupChat(int unitId);
 }
