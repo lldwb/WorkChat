@@ -40,31 +40,35 @@
             <span>微信</span>
             <template #icon="props">
                 <router-link to="/">
-                <img src="img/信息.png"/>
-            </router-link>
+                    <img src="img/信息.png"/>
+                </router-link>
             </template>
         </van-tabbar-item>
+
         <van-tabbar-item badge="3">
             <span>通讯录</span>
             <template #icon="props"  @click="showc">
                 <router-link to="/a2">
-                <img src="img/联系人.png" />
+                    <img src="img/联系人.png" />
                 </router-link>
             </template>
         </van-tabbar-item>
+
         <van-tabbar-item badge="3">
             <span>发现</span>
             <template #icon="props">
                 <router-link to="/a1">
                     <img src="img/发现.png" />
                 </router-link>
-
             </template>
         </van-tabbar-item>
+
         <van-tabbar-item badge="3">
             <span>我</span>
             <template #icon="props">
-                <img src="img/我的.png" />
+                <router-link to="/a3">
+                    <img src="img/我的.png" />
+                </router-link>
             </template>
         </van-tabbar-item>
     </van-tabbar>
@@ -73,12 +77,14 @@
     var mya = {template: "<mya></mya>"}
     var myb = {template: "<myb></myb>"}
     var myc = {template: "<myc></myc>"}
+    var myd = {template: "<myd></myd>"}
 
     var router = new VueRouter({
         routes: [
             {path: "/a1", component: mya},
             {path: "/", component: myb},
             {path: "/a2", component: myc},
+            {path: "/a3", component: myd},
         ]
     })
 
