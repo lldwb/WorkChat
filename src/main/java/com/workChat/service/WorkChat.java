@@ -1,5 +1,6 @@
 package com.workChat.service;
 
+import com.workChat.entity.Chat;
 import com.workChat.entity.GroupChat;
 import com.workChat.entity.Unit;
 import com.workChat.entity.User;
@@ -17,6 +18,9 @@ public interface WorkChat {
     User getIdUser(int id);
     //根据单位编号返回用户集合
     List<User> getUnitIdUser(int unitId);
+
+    //通过用户id返回Chat集合
+    List<Chat> getUserIdChat(int userId);
 
     //通过Id返回单位 陈强
     Unit getIdUnit(int id);

@@ -2,6 +2,7 @@ package com.workChat.service;
 
 import com.workChat.dao.SqlDao;
 import com.workChat.dao.SqlDaoImpl;
+import com.workChat.entity.Chat;
 import com.workChat.entity.GroupChat;
 import com.workChat.entity.Unit;
 import com.workChat.entity.User;
@@ -27,6 +28,11 @@ public class WorkChatImpl implements WorkChat{
     @Override
     public List<User> getUnitIdUser(int unitId) {
         return sqlDao.getUnitIdUser(unitId);
+    }
+
+    @Override
+    public List<Chat> getUserIdChat(int userId) {
+        return null;
     }
 
     @Override
