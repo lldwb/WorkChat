@@ -31,9 +31,13 @@ public interface WorkChat {
     //通过Id返回单位 陈强
     Unit getIdUnit(int id);
 
+    //创建群聊 陈强
+    int addGroupChat(int userId,int unitId,String word);
     //通过单位编号返回GroupChat集合
     List<GroupChat> getUnitIdGroupChat(int unitId);
 
+    //创建工作圈 陈强
+    int addWorkCircle(int title,int userId,String content);
     //通过单位编号返回WorkCircle集合
     List<WorkChat> getUnitIdWorkCircle(int unitId);
 }
