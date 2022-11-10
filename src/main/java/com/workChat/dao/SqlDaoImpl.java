@@ -64,7 +64,7 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
-    public int addChat(String userId, String receiveId, String word) {
+    public int addChat(int userId, int receiveId, String word) {
         return 0;
     }
 

@@ -21,7 +21,7 @@ public interface SqlDao {
     List<User> getUnitIdUser(int unitId);
 
     //创建聊天 陈强
-    int addChat(String userId, String receiveId, String word);
+    int addChat(int userId, int receiveId, String word);
     //通过用户id返回Chat集合
     List<Chat> getUserIdChat(int userId);
     //通过发送id和接收id返回Chat集合

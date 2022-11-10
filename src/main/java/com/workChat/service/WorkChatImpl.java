@@ -31,8 +31,8 @@ public class WorkChatImpl implements WorkChat{
     }
 
     @Override
-    public int addChat(String userId, String receiveId, String word) {
-        return 0;
+    public int addChat(int userId, int receiveId, String word) {
+        return sqlDao.addChat(userId,receiveId,word);
     }
 
     @Override
@@ -49,12 +49,10 @@ public class WorkChatImpl implements WorkChat{
     public int addUnit(String name, int userId, String remark) {
         return 0;
     }
-
     @Override
     public Unit getIdUnit(int id) {
         return sqlDao.getIdUnit(id);
     }
-
     @Override
     public int addGroupChat(int userId, int unitId, String word) {
         return 0;
@@ -67,7 +65,7 @@ public class WorkChatImpl implements WorkChat{
 
     @Override
     public int addWorkCircle(String title, int userId, String content) {
-        return 0;
+        return sqlDao.addWorkCircle(title,userId,content);
     }
 
     @Override
