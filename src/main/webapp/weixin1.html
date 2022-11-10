@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css2/index.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js2/vue.min.js"></script>
+    <script src="js2/vant.min.js"></script>
+    <script src="js/vue-router.js"></script>
+    <script src="js/a.js"></script>
+    <script src="js/b.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+</head>
+<body>
+<div id="div1">
+    <!--头部-->
+    <van-sticky>
+        <van-row >
+            <van-col span="24" align="center" style="background-color:#F5F5F5;">
+                <van-cell title="微信" style="background-color:#F5F5F5;"/>
+                <template #right-icon>
+                    <van-icon name="search" size="20"/>&nbsp;
+                    <van-icon name="add-o" size="20" />
+                </template>
+            </van-col>
+        </van-row>
+    </van-sticky>
+    <!--身体-->
+    <van-row type="flex" style="background-color:#F5F5F5;">
+        <van-col span="24" ><van-cell title="单元格" size="large" is-link /></van-col>
+        <van-col span="24" ><van-cell title="单元格" size="large" is-link /></van-col>
+        <van-col span="24" ><van-cell title="单元格" size="large" is-link /></van-col>
+        <van-col span="24" ><van-cell title="单元格" size="large" is-link /></van-col>
+        <van-col span="24" ><van-cell title="单元格" size="large" is-link /></van-col>
+        <van-col span="24" ><van-cell title="单元格" size="large" is-link /></van-col>
+        <van-col span="24" ><van-cell title="单元格" size="large" is-link /></van-col>
+    </van-row>
+    <!--导航栏-->
+    <van-tabbar v-model="active">
+        <van-tabbar-item badge="3">
+            <span>微信</span>
+            <template #icon="props">
+                <router-link to="/">
+                    <img src="img/信息.png"/>
+                </router-link>
+            </template>
+        </van-tabbar-item>
+        <van-tabbar-item badge="3">
+            <span>通讯录</span>
+            <template #icon="props">
+                <img src="img/联系人.png" />
+            </template>
+        </van-tabbar-item>
+        <van-tabbar-item badge="3">
+            <span>发现</span>
+            <template #icon="props">
+                <router-link to="/a1">
+                    <img src="img/发现.png" />
+                </router-link>
+
+            </template>
+        </van-tabbar-item>
+        <van-tabbar-item badge="3">
+            <span>我</span>
+            <template #icon="props">
+                <img src="img/我的.png" />
+            </template>
+        </van-tabbar-item>
+    </van-tabbar>
+</div>
+<script>
+
+    new Vue({
+        el: "#div1",
+        data: {
+            active : 0,
+        },
+    })
+</script>
+</body>
