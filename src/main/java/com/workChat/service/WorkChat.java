@@ -30,5 +30,6 @@ public interface WorkChat {
     //通过单位编号返回GroupChat集合
     List<GroupChat> getUnitIdGroupChat(int unitId);
 
-    //
+    //通过单位编号返回WorkCircle集合
+    List<WorkChat> getUnitIdWorkCircle(int unitId);
 }
