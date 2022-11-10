@@ -24,7 +24,7 @@ public class GetUnitIdWorkCircle extends HttpServlet {
         WorkChat workChat = new WorkChatImpl();
 
         ObjectMapper om = new ObjectMapper();
-//        String json = om.writeValueAsString(workChat.getUnitIdGroupChat(Integer.parseInt(unitId_Str)));
+//        String json = om.writeValueAsString(workChat.getUnitIdWorkCircle(Integer.parseInt(unitId_Str)));
 //        resp.getWriter().print(json);
     }
 
