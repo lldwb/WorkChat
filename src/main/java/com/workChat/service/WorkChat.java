@@ -27,7 +27,7 @@ public interface WorkChat {
     List<Chat> getUserIdReceiveIdChat(int userId, int receiveId);
 
     //创建单位 陈强
-    int addUnit(String name, int userId, int remark);
+    int addUnit(String name, int userId, String remark);
     //通过Id返回单位 陈强
     Unit getIdUnit(int id);
 
@@ -37,7 +37,7 @@ public interface WorkChat {
     List<GroupChat> getUnitIdGroupChat(int unitId);
 
     //创建工作圈 陈强
-    int addWorkCircle(int title,int userId,String content);
+    int addWorkCircle(String title,int userId,String content);
     //通过单位编号返回WorkCircle集合
     List<WorkChat> getUnitIdWorkCircle(int unitId);
 }
