@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface WorkChat {
     //创建员工账号
-    int addUnitIdUser(String name,String pwd,int unitId);
+    int addUser(String name, String pwd, int unitId);
     //根据id返回用户
     User getIdUser(int id);
     //根据单位编号返回用户集合
@@ -24,6 +24,8 @@ public interface WorkChat {
     //通过发送id和接收id返回Chat集合
     List<Chat> getUserIdReceiveIdChat(int userId, int receiveId);
 
+    //创建单位 陈强
+    int addUnit(int id);
     //通过Id返回单位 陈强
     Unit getIdUnit(int id);
 

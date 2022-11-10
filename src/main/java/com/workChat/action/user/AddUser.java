@@ -14,8 +14,8 @@ import java.io.IOException;
  * @author 安然的尾巴
  * @version 1.0
  */
-@WebServlet("/AddUnitIdUser")
-public class AddUnitIdUser extends HttpServlet {
+@WebServlet("/AddUser")
+public class AddUser extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
@@ -24,7 +24,7 @@ public class AddUnitIdUser extends HttpServlet {
         String unitId_Str = req.getParameter("unitId");
         WorkChat workChat = new WorkChatImpl();
 
-        resp.getWriter().print(workChat.addUnitIdUser(name,pwd,Integer.parseInt(unitId_Str)));
+        resp.getWriter().print(workChat.addUser(name,pwd,Integer.parseInt(unitId_Str)));
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

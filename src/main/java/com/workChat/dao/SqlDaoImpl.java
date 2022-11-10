@@ -19,7 +19,7 @@ import java.util.List;
 public class SqlDaoImpl implements SqlDao {
     MySqlUtil mySqlUtil = new MySqlUtil();
     @Override
-    public int addUnitIdUser(String name,String pwd,int unitId) {
+    public int addUser(String name, String pwd, int unitId) {
         return mySqlUtil.update("insert into user(name,pwd,unitId) values(?,?,?)",name,pwd,unitId);
     }
 
@@ -30,7 +30,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public List<WorkChat> getUnitIdWorkCircle(int unitId) {
-        return null;
+        return mySqlUtil.queryList(WorkChat.class,"select * from groupChat where id=?", unitId);
     }
 
     @Override
