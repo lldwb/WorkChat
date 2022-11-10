@@ -29,6 +29,11 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
+    public int addWorkCircle(String title, int userId, String content) {
+        return 0;
+    }
+
+    @Override
     public List<WorkChat> getUnitIdWorkCircle(int unitId) {
         return mySqlUtil.queryList(WorkChat.class,"select * from groupChat where id=?", unitId);
     }
@@ -59,6 +64,11 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
+    public int addChat(String userId, String receiveId, String word) {
+        return 0;
+    }
+
+    @Override
     public List<Chat> getUserIdChat(int userId) {
         //读取id作为发送方和接收方的信息
         return mySqlUtil.queryList(Chat.class,"select * from chat where userId=? or receiveId=?", userId,userId);
@@ -67,6 +77,11 @@ public class SqlDaoImpl implements SqlDao {
     @Override
     public List<Chat> getUserIdReceiveIdChat(int userId, int receiveId) {
         return mySqlUtil.queryList(Chat.class,"select * from chat where (userId=? and receiveId=?) or (receiveId=? and userId=?)", userId,receiveId,userId,receiveId);
+    }
+
+    @Override
+    public int addUnit(String name, int userId, String remark) {
+        return 0;
     }
 
     @Override
@@ -86,5 +101,10 @@ public class SqlDaoImpl implements SqlDao {
             return null;
 
         }
+    }
+
+    @Override
+    public int addGroupChat(int userId, int unitId, String word) {
+        return 0;
     }
 }
