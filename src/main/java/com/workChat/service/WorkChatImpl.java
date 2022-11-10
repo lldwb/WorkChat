@@ -49,4 +49,9 @@ public class WorkChatImpl implements WorkChat{
     public List<GroupChat> getUnitIdGroupChat(int unitId) {
         return sqlDao.getUnitIdGroupChat(unitId);
     }
+
+    @Override
+    public List<WorkChat> getUnitIdWorkCircle(int unitId) {
+        return sqlDao.getUnitIdWorkCircle(unitId);
+    }
 }

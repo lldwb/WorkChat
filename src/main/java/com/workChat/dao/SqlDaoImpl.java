@@ -4,6 +4,7 @@ import com.workChat.entity.Chat;
 import com.workChat.entity.GroupChat;
 import com.workChat.entity.Unit;
 import com.workChat.entity.User;
+import com.workChat.service.WorkChat;
 import com.workChat.util.MySqlUtil;
 
 import java.sql.ResultSet;
@@ -25,6 +26,11 @@ public class SqlDaoImpl implements SqlDao {
     @Override
     public List<GroupChat> getUnitIdGroupChat(int unitId) {
         return mySqlUtil.queryList(GroupChat.class,"select * from groupChat where id=?", unitId);
+    }
+
+    @Override
+    public List<WorkChat> getUnitIdWorkCircle(int unitId) {
+        return null;
     }
 
     @Override

@@ -4,6 +4,7 @@ import com.workChat.entity.Chat;
 import com.workChat.entity.GroupChat;
 import com.workChat.entity.Unit;
 import com.workChat.entity.User;
+import com.workChat.service.WorkChat;
 
 import java.util.List;
 
@@ -29,4 +30,7 @@ public interface SqlDao {
 
     //通过单位编号返回GroupChat集合 黄为东
     List<GroupChat> getUnitIdGroupChat(int unitId);
+
+    //通过单位编号返回WorkCircle集合
+    List<WorkChat> getUnitIdWorkCircle(int unitId);
 }
