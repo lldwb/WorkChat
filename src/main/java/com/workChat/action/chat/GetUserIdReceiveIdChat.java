@@ -1,7 +1,6 @@
 package com.workChat.action.chat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.workChat.entity.Chat;
 import com.workChat.service.WorkChat;
 import com.workChat.service.WorkChatImpl;
 
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * @author 安然的尾巴
@@ -27,7 +25,7 @@ public class GetUserIdReceiveIdChat extends HttpServlet {
         WorkChat workChat = new WorkChatImpl();
 
         ObjectMapper om = new ObjectMapper();
-        List<Chat> json = workChat.getUserIdReceiveIdChat(Integer.parseInt(userId_Str),Integer.parseInt(receiveId_Str));
+        String json = om.writeValueAsString(workChat.getUserIdReceiveIdChat(Integer.parseInt(userId_Str),Integer.parseInt(receiveId_Str)));
         resp.getWriter().print(json);
     }
 
