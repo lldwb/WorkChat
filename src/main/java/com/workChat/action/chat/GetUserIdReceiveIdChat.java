@@ -13,11 +13,15 @@ import java.io.IOException;
  */
 @WebServlet("/GetUserIdReceiveIdChat")
 public class GetUserIdReceiveIdChat extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setCharacterEncoding("utf-8");
+        String userId_Str = req.getParameter("userId");
+        String receiveId_Str = req.getParameter("receiveId");
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req,resp);
     }
 }

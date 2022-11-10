@@ -59,6 +59,11 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
+    public List<Chat> GetUserIdReceiveIdChat(int userId, int receiveId) {
+        return null;
+    }
+
+    @Override
     public Unit getIdUnit(int id) {
         ResultSet rs = mySqlUtil.queryResultSet("select * from user where id=?",id);
         Unit unit = new Unit();
