@@ -22,7 +22,7 @@ public interface SqlDao {
     //通过用户id返回Chat集合
     List<Chat> getUserIdChat(int userId);
     //通过发送id和接收id返回Chat集合
-    List<Chat> GetUserIdReceiveIdChat(int userId,int receiveId);
+    List<Chat> getUserIdReceiveIdChat(int userId, int receiveId);
 
     //通过Id返回单位 陈强
     Unit getIdUnit(int id);

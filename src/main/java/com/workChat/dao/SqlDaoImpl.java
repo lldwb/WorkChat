@@ -59,7 +59,7 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
-    public List<Chat> GetUserIdReceiveIdChat(int userId, int receiveId) {
+    public List<Chat> getUserIdReceiveIdChat(int userId, int receiveId) {
         return mySqlUtil.queryList(Chat.class,"select * from chat where (userId=? and receiveId=?) or (receiveId=? and userId=?)", userId,receiveId,userId,receiveId);
     }
 

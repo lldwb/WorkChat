@@ -36,8 +36,8 @@ public class WorkChatImpl implements WorkChat{
     }
 
     @Override
-    public List<Chat> GetUserIdReceiveIdChat(int userId, int receiveId) {
-        return sqlDao.GetUserIdReceiveIdChat(userId,receiveId);
+    public List<Chat> getUserIdReceiveIdChat(int userId, int receiveId) {
+        return sqlDao.getUserIdReceiveIdChat(userId,receiveId);
     }
 
     @Override
