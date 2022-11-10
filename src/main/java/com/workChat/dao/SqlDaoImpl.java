@@ -4,6 +4,7 @@ import com.workChat.entity.Chat;
 import com.workChat.entity.GroupChat;
 import com.workChat.entity.Unit;
 import com.workChat.entity.User;
+import com.workChat.service.WorkChat;
 import com.workChat.util.MySqlUtil;
 
 import java.sql.ResultSet;
@@ -18,13 +19,23 @@ import java.util.List;
 public class SqlDaoImpl implements SqlDao {
     MySqlUtil mySqlUtil = new MySqlUtil();
     @Override
-    public int addUnitIdUser(String name,String pwd,int unitId) {
+    public int addUser(String name, String pwd, int unitId) {
         return mySqlUtil.update("insert into user(name,pwd,unitId) values(?,?,?)",name,pwd,unitId);
     }
 
     @Override
     public List<GroupChat> getUnitIdGroupChat(int unitId) {
         return mySqlUtil.queryList(GroupChat.class,"select * from groupChat where id=?", unitId);
+    }
+
+    @Override
+    public int addWorkCircle(String title, int userId, String content) {
+        return 0;
+    }
+
+    @Override
+    public List<WorkChat> getUnitIdWorkCircle(int unitId) {
+        return mySqlUtil.queryList(WorkChat.class,"select * from groupChat where id=?", unitId);
     }
 
     @Override
@@ -53,9 +64,24 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
+    public int addChat(int userId, int receiveId, String word) {
+        return 0;
+    }
+
+    @Override
     public List<Chat> getUserIdChat(int userId) {
         //读取id作为发送方和接收方的信息
-        return mySqlUtil.queryList(Chat.class,"select * from chat where userId=? or faceId=?", userId,userId);
+        return mySqlUtil.queryList(Chat.class,"select * from chat where userId=? or receiveId=?", userId,userId);
+    }
+
+    @Override
+    public List<Chat> getUserIdReceiveIdChat(int userId, int receiveId) {
+        return mySqlUtil.queryList(Chat.class,"select * from chat where (userId=? and receiveId=?) or (receiveId=? and userId=?)", userId,receiveId,userId,receiveId);
+    }
+
+    @Override
+    public int addUnit(String name, int userId, String remark) {
+        return 0;
     }
 
     @Override
@@ -75,5 +101,10 @@ public class SqlDaoImpl implements SqlDao {
             return null;
 
         }
+    }
+
+    @Override
+    public int addGroupChat(int userId, int unitId, String word) {
+        return 0;
     }
 }
