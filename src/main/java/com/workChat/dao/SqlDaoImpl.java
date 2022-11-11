@@ -30,7 +30,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public int addWorkCircle(String title, int userId, String content) {
-        return 0;
+        return mySqlUtil.update("insert into Chat (title,userId,content) values(?,?,?)",title,userId,content);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public int addChat(int userId, int receiveId, String word) {
-        return mySqlUtil.update("insert into Chat (name,pwd,unitId) values(?,?,?)",userId,receiveId,word);
+        return mySqlUtil.update("insert into Chat(userId,receiveId,word) values(?,?,?)",userId,receiveId,word);
     }
 
     @Override
@@ -81,7 +81,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public int addUnit(String name, int userId, String remark) {
-        return mySqlUtil.update("insert into Unit where values(?,?,?)",name,userId,remark);
+        return mySqlUtil.update("insert into Unit(name,userId,remark) values(?,?,?)",name,userId,remark);
     }
 
     @Override
@@ -105,6 +105,6 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public int addGroupChat(int userId, int unitId, String word) {
-        return mySqlUtil.update("insert into GroupChat where values(?,?,?)",userId,unitId,word);
+        return mySqlUtil.update("insert into GroupChat(userId,unitId,word) values(?,?,?)",userId,unitId,word);
     }
 }
