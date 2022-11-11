@@ -36,8 +36,7 @@ public class SqlDaoImpl implements SqlDao {
     @Override
     public List<WorkChat> getUnitIdWorkCircle(int unitId) {
         //a左表 workChat  b右表 user
-        return mySqlUtil.queryList(WorkChat.class,"select a.* from workChat as a left join\n" +
-                "user as b on a.userId=b.id where b.unitId is ?;", unitId);
+        return mySqlUtil.queryList(WorkChat.class,"select a.* from workChat as a left join user as b on a.userId=b.id where b.unitId is ?;", unitId);
     }
 
     @Override

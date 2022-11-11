@@ -24,8 +24,8 @@ public class GetUnitIdWorkCircle extends HttpServlet {
         WorkChat workChat = new WorkChatImpl();
 
         ObjectMapper om = new ObjectMapper();
-//        String json = om.writeValueAsString(workChat.getUnitIdWorkCircle(Integer.parseInt(unitId_Str)));
-//        resp.getWriter().print(json);
+        String json = om.writeValueAsString(workChat.getUnitIdWorkCircle(Integer.parseInt(unitId_Str)));
+        resp.getWriter().print(json);
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
