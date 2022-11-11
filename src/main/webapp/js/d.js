@@ -35,7 +35,7 @@ Vue.component("myd",{
         "                <van-cell title=\"表情\" icon=\"smile-o\" is-link url=\"#\"/>\n" +
         "            </van-col>\n" +
         "            <van-col span=\"24\" style=\"margin-bottom: 5px\">\n" +
-        "                <van-cell title=\"设置\" icon=\"bars\" is-link url=\"setup.html\"/>\n" +
+        "                <van-cell title=\"设置\" icon=\"bars\" is-link url=\"#\"/>\n" +
         "            </van-col>\n" +
         "        </van-row>\n" +
         "\n" +
