@@ -5,7 +5,7 @@ Vue.component("myd",{
         "        <van-row style=\"background-color: white;margin-bottom: 5px\">\n" +
         "            <van-col span=\"7\" style=\"height: 70px; text-align: center;margin-top: 10px\">\n" +
         "\n" +
-        "                    <img src=\"img/3.webp\" width=\"50px\" height=\"50px\"  />\n" +
+        "                    <img src=\"https://img01.yzcdn.cn/vant/cat.jpeg\" width=\"50px\" height=\"50px\"  />\n" +
         "\n" +
         "            </van-col>\n" +
         "            <van-col span=\"10\" style=\"height: 70px\">\n" +
@@ -35,7 +35,7 @@ Vue.component("myd",{
         "                <van-cell title=\"表情\" icon=\"smile-o\" is-link url=\"#\"/>\n" +
         "            </van-col>\n" +
         "            <van-col span=\"24\" style=\"margin-bottom: 5px\">\n" +
-        "                <van-cell title=\"设置\" icon=\"bars\" is-link url=\"#\"/>\n" +
+        "                <van-cell title=\"设置\" icon=\"bars\" is-link url=\"setup.html\"/>\n" +
         "            </van-col>\n" +
         "        </van-row>\n" +
         "\n" +
