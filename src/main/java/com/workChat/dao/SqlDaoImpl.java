@@ -36,7 +36,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public int updateWorkCircle(int id,String title, String content) {
-        return mySqlUtil.update("update workCircle set title=?, content=? where 指定值（如：列名=旧指定值）;");
+        return mySqlUtil.update("update workCircle set title=?, content=? where id=?",title,content,id);
     }
 
     @Override
