@@ -11,6 +11,8 @@ import java.util.List;
 public interface SqlDao {
     //创建员工账号
     int addUser(String name, String pwd, int unitId);
+    //修改员工账号
+    int UpdateUser(String name, String pwd);
     //根据id返回用户
     User getIdUser(int id);
     //根据单位编号返回用户集合 黄为东

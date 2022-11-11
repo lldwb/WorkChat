@@ -20,6 +20,11 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
+    public int UpdateUser(String name, String pwd) {
+        return 0;
+    }
+
+    @Override
     public List<GroupChat> getUnitIdGroupChat(int unitId) {
         return mySqlUtil.queryList(GroupChat.class,"select * from groupChat where id=?", unitId);
     }
