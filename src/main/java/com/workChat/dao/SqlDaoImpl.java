@@ -31,7 +31,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public int addWorkCircle(String title, int userId, String content) {
-        return mySqlUtil.update("insert into Chat (title,userId,content) values(?,?,?)",title,userId,content);
+        return mySqlUtil.update("insert into WorkCircle(title,userId,content) values(?,?,?)",title,userId,content);
     }
 
     @Override
@@ -93,7 +93,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public Unit getIdUnit(int id) {
-        ResultSet rs = mySqlUtil.queryResultSet("select * from user where id=?",id);
+        ResultSet rs = mySqlUtil.queryResultSet("select * from Unit where id=?",id);
         Unit unit = new Unit();
         try {
             if(rs.next()){
