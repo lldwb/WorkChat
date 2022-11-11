@@ -25,8 +25,13 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
+    public int deleteIdUser(int id) {
+        return mySqlUtil.update("delete from user where id=?", id);
+    }
+
+    @Override
     public List<GroupChat> getUnitIdGroupChat(int unitId) {
-        return mySqlUtil.queryList(GroupChat.class,"select * from groupChat where id=?", unitId);
+        return mySqlUtil.queryList(GroupChat.class,"select * from groupChat where unitId=?", unitId);
     }
 
     @Override
