@@ -11,7 +11,16 @@ public class WorkCircle {
     private String title;
     private int userId;
     private Timestamp time	;
+    private int unitId;
     private String content;
+
+    public int getUnitId() {
+        return unitId;
+    }
+
+    public void setUnitId(int unitId) {
+        this.unitId = unitId;
+    }
 
     public int getId() {
         return id;

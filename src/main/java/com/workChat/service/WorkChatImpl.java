@@ -2,10 +2,7 @@ package com.workChat.service;
 
 import com.workChat.dao.SqlDao;
 import com.workChat.dao.SqlDaoImpl;
-import com.workChat.entity.Chat;
-import com.workChat.entity.GroupChat;
-import com.workChat.entity.Unit;
-import com.workChat.entity.User;
+import com.workChat.entity.*;
 
 import java.util.List;
 
@@ -18,6 +15,11 @@ public class WorkChatImpl implements WorkChat{
     @Override
     public int addUser(String name, String pwd, int unitId) {
         return sqlDao.addUser(name,pwd,unitId);
+    }
+
+    @Override
+    public int UpdateUser(String name, String pwd) {
+        return 0;
     }
 
     @Override
@@ -47,7 +49,7 @@ public class WorkChatImpl implements WorkChat{
 
     @Override
     public int addUnit(String name, int userId, String remark) {
-        return 0;
+        return sqlDao.addUnit(name,userId,remark);
     }
     @Override
     public Unit getIdUnit(int id) {
@@ -55,7 +57,7 @@ public class WorkChatImpl implements WorkChat{
     }
     @Override
     public int addGroupChat(int userId, int unitId, String word) {
-        return 0;
+        return sqlDao.addGroupChat(userId,unitId,word);
     }
 
     @Override
@@ -69,7 +71,7 @@ public class WorkChatImpl implements WorkChat{
     }
 
     @Override
-    public List<WorkChat> getUnitIdWorkCircle(int unitId) {
+    public List<WorkCircle> getUnitIdWorkCircle(int unitId) {
         return sqlDao.getUnitIdWorkCircle(unitId);
     }
 }

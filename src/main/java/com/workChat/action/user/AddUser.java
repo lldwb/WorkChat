@@ -1,5 +1,6 @@
 package com.workChat.action.user;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.workChat.service.WorkChat;
 import com.workChat.service.WorkChatImpl;
 
@@ -23,8 +24,9 @@ public class AddUser extends HttpServlet {
         String pwd = req.getParameter("pwd");
         String unitId_Str = req.getParameter("unitId");
         WorkChat workChat = new WorkChatImpl();
-
-        resp.getWriter().print(workChat.addUser(name,pwd,Integer.parseInt(unitId_Str)));
+        ObjectMapper om = new ObjectMapper();
+        String json = om.writeValueAsString(workChat.addUser(name,pwd,Integer.parseInt(unitId_Str)));
+        resp.getWriter().print(json);
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -1,10 +1,6 @@
 package com.workChat.dao;
 
-import com.workChat.entity.Chat;
-import com.workChat.entity.GroupChat;
-import com.workChat.entity.Unit;
-import com.workChat.entity.User;
-import com.workChat.service.WorkChat;
+import com.workChat.entity.*;
 import com.workChat.util.MySqlUtil;
 
 import java.sql.ResultSet;
@@ -24,6 +20,11 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
+    public int UpdateUser(String name, String pwd) {
+        return 0;
+    }
+
+    @Override
     public List<GroupChat> getUnitIdGroupChat(int unitId) {
         return mySqlUtil.queryList(GroupChat.class,"select * from groupChat where id=?", unitId);
     }
@@ -34,8 +35,9 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
-    public List<WorkChat> getUnitIdWorkCircle(int unitId) {
-        return mySqlUtil.queryList(WorkChat.class,"select * from groupChat where id=?", unitId);
+    public List<WorkCircle> getUnitIdWorkCircle(int unitId) {
+        //a左表 workChat  b右表 user
+        return mySqlUtil.queryList(WorkCircle.class,"select * from workCircle where unitId=?", unitId);
     }
 
     @Override
@@ -65,7 +67,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public int addChat(int userId, int receiveId, String word) {
-        return 0;
+        return mySqlUtil.update("insert into Chat (name,pwd,unitId) values(?,?,?)",userId,receiveId,word);
     }
 
     @Override
@@ -81,7 +83,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public int addUnit(String name, int userId, String remark) {
-        return 0;
+        return mySqlUtil.update("insert into Unit where values(?,?,?)",name,userId,remark);
     }
 
     @Override
@@ -105,6 +107,6 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public int addGroupChat(int userId, int unitId, String word) {
-        return 0;
+        return mySqlUtil.update("insert into GroupChat where values(?,?,?)",userId,unitId,word);
     }
 }
