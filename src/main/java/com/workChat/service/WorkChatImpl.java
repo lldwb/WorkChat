@@ -23,6 +23,11 @@ public class WorkChatImpl implements WorkChat{
     }
 
     @Override
+    public int deleteIdUser(int id) {
+        return sqlDao.deleteIdUser(id);
+    }
+
+    @Override
     public User getIdUser(int id) {
         return sqlDao.getIdUser(id);
     }

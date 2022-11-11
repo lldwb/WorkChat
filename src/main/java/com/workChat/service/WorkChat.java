@@ -13,6 +13,8 @@ public interface WorkChat {
     int addUser(String name, String pwd, int unitId);
     //修改员工账号 陈强
     int updateUser(int id,String name, String pwd);
+    //删除员工账号
+    int deleteIdUser(int id);
     //根据id返回用户
     User getIdUser(int id);
     //根据单位编号返回用户集合
@@ -27,7 +29,7 @@ public interface WorkChat {
 
     //创建单位 陈强
     int addUnit(String name, int userId, String remark);
-    //通过Id返回单位 陈强
+    //通过Id返回单位 陈强 v
     Unit getIdUnit(int id);
 
     //创建群聊 陈强
