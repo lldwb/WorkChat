@@ -1,10 +1,6 @@
 package com.workChat.dao;
 
-import com.workChat.entity.Chat;
-import com.workChat.entity.GroupChat;
-import com.workChat.entity.Unit;
-import com.workChat.entity.User;
-import com.workChat.service.WorkChat;
+import com.workChat.entity.*;
 import com.workChat.util.MySqlUtil;
 
 import java.sql.ResultSet;
@@ -34,9 +30,9 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
-    public List<WorkChat> getUnitIdWorkCircle(int unitId) {
+    public List<WorkCircle> getUnitIdWorkCircle(int unitId) {
         //a左表 workChat  b右表 user
-        return mySqlUtil.queryList(WorkChat.class,"select a.* from workChat as a left join user as b on a.userId=b.id where b.unitId is ?;", unitId);
+        return mySqlUtil.queryList(WorkCircle.class,"select a.* from workCircle as a left join user as b on a.userId=b.id where b.unitId is ?;", unitId);
     }
 
     @Override

@@ -1,9 +1,6 @@
 package com.workChat.service;
 
-import com.workChat.entity.Chat;
-import com.workChat.entity.GroupChat;
-import com.workChat.entity.Unit;
-import com.workChat.entity.User;
+import com.workChat.entity.*;
 
 import java.util.List;
 
@@ -39,5 +36,5 @@ public interface WorkChat {
     //创建工作圈 陈强
     int addWorkCircle(String title,int userId,String content);
     //通过单位编号返回WorkCircle集合
-    List<WorkChat> getUnitIdWorkCircle(int unitId);
+    List<WorkCircle> getUnitIdWorkCircle(int unitId);
 }
