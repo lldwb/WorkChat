@@ -29,7 +29,7 @@ public interface WorkChat {
 
     //创建单位 陈强
     int addUnit(String name, int userId, String remark);
-    //通过Id返回单位 陈强
+    //通过Id返回单位 陈强 v
     Unit getIdUnit(int id);
 
     //创建群聊 陈强
