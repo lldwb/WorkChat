@@ -18,7 +18,7 @@ public class WorkChatImpl implements WorkChat{
     }
 
     @Override
-    public int UpdateUser(String name, String pwd) {
+    public int updateUser(int id,String name, String pwd) {
         return 0;
     }
 
@@ -68,6 +68,11 @@ public class WorkChatImpl implements WorkChat{
     @Override
     public int addWorkCircle(String title, int userId, String content) {
         return sqlDao.addWorkCircle(title,userId,content);
+    }
+
+    @Override
+    public int updateWorkCircle(int id,String title, String content) {
+        return sqlDao.updateWorkCircle(id,title,content);
     }
 
     @Override
