@@ -19,7 +19,7 @@ public class WorkChatImpl implements WorkChat{
 
     @Override
     public int updateUser(int id,String name, String pwd) {
-        return 0;
+        return sqlDao.updateUser(id,name,pwd);
     }
 
     @Override

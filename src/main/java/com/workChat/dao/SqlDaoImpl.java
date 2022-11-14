@@ -21,7 +21,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public int updateUser(int id,String name, String pwd) {
-        return 0;
+        return mySqlUtil.update("update updateUser sel id=?, name=?, pwd=?",id,name,pwd);
     }
 
     @Override
