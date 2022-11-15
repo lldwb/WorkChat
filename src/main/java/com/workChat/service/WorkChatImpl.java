@@ -56,6 +56,12 @@ public class WorkChatImpl implements WorkChat{
     public int addUnit(String name, int userId, String remark) {
         return sqlDao.addUnit(name,userId,remark);
     }
+
+    @Override
+    public int updateUnit(int id, String name, int userId, String remark) {
+        return sqlDao.updateUnit(id,name,userId,remark);
+    }
+
     @Override
     public Unit getIdUnit(int id) {
         return sqlDao.getIdUnit(id);

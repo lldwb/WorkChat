@@ -97,6 +97,11 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
+    public int updateUnit(int id, String name, int userId, String remark) {
+        return mySqlUtil.update("update updateUnit sel name=?, userId=?,remark=? where id=?",name,userId,remark,id);
+    }
+
+    @Override
     public Unit getIdUnit(int id) {
         ResultSet rs = mySqlUtil.queryResultSet("select * from Unit where id=?",id);
         Unit unit = new Unit();
