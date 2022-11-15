@@ -2,6 +2,7 @@ Vue.component("myc",{
     data(){
         return{
             listw:this.$route.params.listw,
+            sj:this.$route.params.sj,
         }
 
     },
@@ -9,7 +10,7 @@ Vue.component("myc",{
         "        <van-index-bar :index-list=listw>\n" +
         "\n" +
         "        <van-col span=\"24\" ><van-cell title=\"联系人\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-index-anchor index=\"1\">杰</van-index-anchor></van-col>\n" +
+        "        <van-col span=\"24\" ><van-index-anchor index=\"1\">{{sj.name}}</van-index-anchor></van-col>\n" +
         "        <van-col span=\"24\" ><van-cell title=\"杰1\" /></van-col>\n" +
         "        <van-col span=\"24\" ><van-cell title=\"杰2\" /></van-col>\n" +
         "        <van-col span=\"24\" ><van-cell title=\"杰3\" /></van-col>\n" +

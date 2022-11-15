@@ -97,12 +97,23 @@
         },
         methods: {
             showc(){
-                this.$router.push({
-                    name:"myc",
-                    params:{
-                        listw:this.indexList,
-                    }
+                $.ajax({
+                    url: "GetUnitIdUser",
+                    dataType: "JSON",
+                    success:function (ss){
+                        this.$router.push({
+                            name:"myc",
+                            params:{
+                                listw:this.indexList,
+                                sj:ss,
+                            }
+                        })
+                    },
+                    error:function (){
+                        alert("获取失败");
+                    },
                 })
+
 
             }
         },
