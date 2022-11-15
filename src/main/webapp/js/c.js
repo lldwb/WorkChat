@@ -1,7 +1,7 @@
 Vue.component("myc",{
     data(){
         return{
-            listw:this.$route.query.listw,
+            listw:this.$route.params.listw,
         }
 
     },
