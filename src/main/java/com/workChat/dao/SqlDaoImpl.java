@@ -21,7 +21,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public int updateUser(int id,String name, String pwd) {
-        return 0;
+        return mySqlUtil.update("update UpdateUser sel name=?, pwd=? where id=?",name,pwd,id);
     }
 
     @Override
@@ -94,6 +94,11 @@ public class SqlDaoImpl implements SqlDao {
     @Override
     public int addUnit(String name, int userId, String remark) {
         return mySqlUtil.update("insert into Unit(name,userId,remark) values(?,?,?)",name,userId,remark);
+    }
+
+    @Override
+    public int updateUnit(int id, String name, int userId, String remark) {
+        return mySqlUtil.update("update updateUnit sel name=?, userId=?,remark=? where id=?",name,userId,remark,id);
     }
 
     @Override

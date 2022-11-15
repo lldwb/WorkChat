@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * @author 陈强
+ * @version 1.0
+ */
 @WebServlet("/AddChat")
 public class AddChat extends HttpServlet {
     @Override

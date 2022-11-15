@@ -20,17 +20,19 @@ public interface SqlDao {
     //根据单位编号返回用户集合 黄为东
     List<User> getUnitIdUser(int unitId);
 
+    //创建单位 陈强
+    int addUnit(String name, int userId, String remark);
+    //修改单位 陈强
+    int updateUnit(int id,String name,int userId,String remark);
+    //通过Id返回单位 陈强
+    Unit getIdUnit(int id);
+
     //创建聊天 陈强
     int addChat(int userId, int receiveId, String word);
     //通过用户id返回Chat集合
     List<Chat> getUserIdChat(int userId);
     //通过发送id和接收id返回Chat集合
     List<Chat> getUserIdReceiveIdChat(int userId, int receiveId);
-
-    //创建单位 陈强
-    int addUnit(String name, int userId, String remark);
-    //通过Id返回单位 陈强
-    Unit getIdUnit(int id);
 
     //创建群聊 陈强
     int addGroupChat(int userId,int unitId,String word);
