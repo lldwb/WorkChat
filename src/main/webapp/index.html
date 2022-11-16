@@ -97,15 +97,16 @@
         },
         methods: {
             showc(){
+                var that=this
                 $.ajax({
                     url: "GetUnitIdUser",
                     dataType: "JSON",
                     data: {unitId:'1'},
                     success:function (ss){
-                        this.$router.push({
+                        that.$router.push({
                             name:"myc",
                             params:{
-                                listw:this.indexList,
+                                listw:that.indexList,
                                 sj:ss,
                             }
                         })
