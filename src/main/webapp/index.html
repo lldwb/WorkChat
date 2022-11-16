@@ -94,28 +94,30 @@
         data: {
             active : 0,
             indexList: [1, 2, 3, 4, 5],
+            sju:'',
         },
         methods: {
+
             showc(){
-                var that=this
+                var that=this;
                 $.ajax({
                     url: "GetUnitIdUser",
                     dataType: "JSON",
                     data: {'unitId':1},
                     success:function (ss){
-                        that.$router.push({
-                            name:"myc",
-                            params:{
-                                listw:that.indexList,
-                                sj:ss,
-                            }
-                        })
+                        that.sju=ss;
                     },
                     error:function (){
                         alert("获取败");
                     },
                 })
-
+                this.$router.push({
+                    name:"myc",
+                    params:{
+                        listw:this.indexList,
+                        sj:this.sju,
+                    }
+                })
 
             }
         },
