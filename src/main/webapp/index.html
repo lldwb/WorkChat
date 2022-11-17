@@ -104,10 +104,10 @@
                     dataType: "JSON",
                     data: {'unitId':1},
                     success:function (ss){
-                        that.shu=ss;
+                        that.shu=ss.name;
                     },
                     error:function (){
-                        alert("获取败");
+                        alert("获取失败");
                     },
                 })
                 this.$router.push({
