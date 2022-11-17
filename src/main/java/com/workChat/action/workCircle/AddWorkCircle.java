@@ -23,11 +23,12 @@ public class AddWorkCircle extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         String title = req.getParameter("title");
         String userId = req.getParameter("userId");
+        String userName = req.getParameter("userName");
         String content = req.getParameter("content");
 
         WorkChat workChat = new WorkChatImpl();
         ObjectMapper om = new ObjectMapper();
-        String json = om.writeValueAsString(workChat.addWorkCircle(title,Integer.parseInt(userId),content));
+        String json = om.writeValueAsString(workChat.addWorkCircle(title,Integer.parseInt(userId),userName,content));
         resp.getWriter().print(json);
     }
 }

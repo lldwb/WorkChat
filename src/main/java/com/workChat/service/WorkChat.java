@@ -40,7 +40,7 @@ public interface WorkChat {
     List<GroupChat> getUnitIdGroupChat(int unitId);
 
     //创建工作圈 陈强
-    int addWorkCircle(String title,int userId,String content);
+    int addWorkCircle(String title,int userId,String userName,String content);
     //修改工作圈
     int updateWorkCircle(int id,String title,String content);
     //通过单位编号返回WorkCircle集合
