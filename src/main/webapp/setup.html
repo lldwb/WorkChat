@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/index.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="js/vant.min.js"></script>
+</head>
+<body>
+<div id="set" type="flex" style="background-color:  #c0ccda">
+    <div>
+        <van-row>
+            <van-col span="24" >
+                <van-nav-bar title="设置" left-text="返回"  left-arrow @click-left="onClickLeft"/>
+            </van-col>
+        </van-row>
+    </div>
+
+    <div>
+        <van-row type="flex">
+            <van-col span="24" style="margin-bottom: 5px">
+                <van-cell title="账号与安全"  is-link url="#" />
+            </van-col>
+            <van-col span="24" >
+                <van-cell title="青少年模式"  is-link url="#" />
+            </van-col>
+            <van-col span="24">
+                <van-cell title="关怀模式"  is-link url="#" />
+            </van-col>
+            <van-col span="24" style="margin-top: 5px">
+                <van-cell title="新消息通知"  is-link url="#" />
+            </van-col>
+            <van-col span="24" >
+                <van-cell title="聊天"  is-link url="#" />
+            </van-col>
+            <van-col span="24" >
+                <van-cell title="通用"  is-link url="#" />
+            </van-col>
+        </van-row>
+    </div>
+    <div>
+        <h4  style=" color: lightslategrey;margin-left: 9px ;margin-bottom: auto" >隐私</h4>
+        <van-row style="background-color:  #c0ccda">
+            <van-col span="24" >
+                <van-cell title="朋友权限"  is-link url="#" />
+            </van-col>
+            <van-col span="24" >
+                <van-cell title="个人信息与权限"  is-link url="#" />
+            </van-col>
+            <van-col span="24" >
+                <van-cell title="个人信息收集清单"  is-link url="#" />
+            </van-col>
+            <van-col span="24" >
+                <van-cell title="第三方信息共享清单"  is-link url="#" />
+            </van-col>
+            <van-col span="24" style="margin-top: 7px" >
+                <van-cell title="关于微信"  is-link url="#" />
+            </van-col>
+            <van-col span="24" >
+                <van-cell title="帮助与反馈"  is-link url="#" />
+            </van-col>
+            <van-col span="24" style="margin-top: 5px;margin-bottom: 5px">
+                <van-cell title="插件"  is-link url="#" />
+            </van-col>
+        </van-row>
+    </div>
+    <div>
+        <van-row >
+            <van-col span="24">
+                <van-button type="primary" size="large" style="background-color: white;color: black;border: none">切换账号</van-button>
+            </van-col>
+            <van-col span="24" style="margin-top:5px;background-color: #c0ccda">
+                <van-button type="primary" plain size="large" style="background-color: white;color: black;border: none;margin-bottom: 5px">退出</van-button>
+            </van-col>
+        </van-row>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    new Vue({
+        el: "#set",
+        data: {
+            active: 0
+        },
+        methods: {
+            onClickLeft() {
+                Toast('返回')
+            }
+        }
+    })
+</script>
