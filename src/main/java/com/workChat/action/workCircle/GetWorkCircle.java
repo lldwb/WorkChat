@@ -1,4 +1,7 @@
-package com.workChat.action.user;
+package com.workChat.action.workCircle; /**
+ * @author 安然的尾巴
+ * @version 1.0
+ */
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.workChat.service.WorkChat;
@@ -11,25 +14,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author 谢世杰
- * @version 1.0
- */
-//通过单位编号返回User集合
-@WebServlet(name = "GetUnitIdUser", value = "/GetUnitIdUser")
-public class GetUnitIdUser extends HttpServlet {
+@WebServlet(name = "GetWorkCircle", value = "/GetWorkCircle")
+public class GetWorkCircle extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
-        String unitId_Str = req.getParameter("unitId");
         WorkChat workChat = new WorkChatImpl();
 
         ObjectMapper om = new ObjectMapper();
-        String json = om.writeValueAsString(workChat.getUnitIdUser(Integer.parseInt(unitId_Str)));
+        String json = om.writeValueAsString(workChat.getWorkCircle());
         resp.getWriter().print(json);
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req,resp);
+        this.doPost(req, resp);
     }
 }
