@@ -100,13 +100,13 @@
             showc(){
                 var that=this
                 $.ajax({
-                    url: "GetUnitIdUser",
-                    dataType: "JSON",
-                    data: {'unitId':1},
-                    success:function (ss){
-                        that.shu=ss;
+                    url: "GetUnitIdUser",//后端链接
+                    dataType: "JSON",//返回类型
+                    data: {'unitId':1},//后端需要的数据
+                    success:function (ss){//成功事件
+                        that.shu=ss.name;//赋值
                     },
-                    error:function (){
+                    error:function (){//失败事件
                         alert("获取失败");
                     },
                 })

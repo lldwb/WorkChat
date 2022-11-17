@@ -47,4 +47,6 @@ public interface WorkChat {
     int updateWorkCircle(int id,String title,String content);
     //通过单位编号返回WorkCircle集合
     List<WorkCircle> getUnitIdWorkCircle(int unitId);
+    //返回WorkCircle集合
+    List<WorkCircle> getWorkCircle();
 }
