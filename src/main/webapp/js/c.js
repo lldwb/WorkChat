@@ -6,34 +6,15 @@ Vue.component("myc",{
         }
 
     },
-    template :"<van-row type=\"flex\" style=\"background-color:#F5F5F5;padding-bottom: 60px\">\n" +
-        "        <van-index-bar :index-list=listw>\n" +
-        "\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"联系人\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-index-anchor index=\"1\">{{this.$route.params.sj}}</van-index-anchor></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell v-model='sj' /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰2\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰3\" /></van-col>\n" +
-        "\n" +
-        "        <van-col span=\"24\" ><van-index-anchor index=\"2\">杰</van-index-anchor></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰1\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰2\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰3\" /></van-col>\n" +
-        "\n" +
-        "        <van-col span=\"24\" ><van-index-anchor index=\"3\">杰</van-index-anchor></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰1\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰2\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰3\" /></van-col>\n" +
-        "\n" +
-        "        <van-col span=\"24\" ><van-index-anchor index=\"4\">杰</van-index-anchor></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰1\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰2\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰3\" /></van-col>\n" +
-        "\n" +
-        "        <van-col span=\"24\" ><van-index-anchor index=\"5\">杰</van-index-anchor></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰1\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰2\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-cell title=\"杰3\" /></van-col>\n" +
-        "    </van-index-bar>\n" +
-        "    </van-row>\n"
+    template :`
+           <van-index-bar :index-list="listw"><van-row type="flex" style="background-color: #F5F5F5;">
+          <van-col span="24" ><van-cell title="联系人" style="width: 100%;height: 100%"/></van-col>
+        <van-col span="24" ><van-index-anchor index="1">杰</van-index-anchor></van-col>
+        <van-col span="24" v-for="shu in sj">
+        <van-notice-bar color="black" background="white">{{shu.name}}</van-notice-bar>
+        </van-col>  </van-row>
+    </van-index-bar>
+  
+`
+
 })

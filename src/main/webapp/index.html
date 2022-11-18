@@ -94,7 +94,7 @@
         data: {
             active : 0,
             indexList: [1, 2, 3, 4, 5],
-            shu:'',
+            shu:{},
         },
         methods: {
             showc(){
@@ -105,6 +105,7 @@
                     data: {'unitId':1},//后端需要的数据
                     success:function (ss){//成功事件
                         that.shu=ss;//赋值
+
                     },
                     error:function (){//失败事件
                         alert("获取失败");
@@ -117,6 +118,7 @@
                         sj:this.shu,
                     }
                 })
+
 
             }
         },
