@@ -12,7 +12,7 @@ Vue.component("myc",{
           <van-col span="24" ><van-cell title="联系人" /></van-col>
         <van-col span="24" ><van-index-anchor index="1">杰</van-index-anchor></van-col>
         <div v-for="shu in sj">
-        <van-col span="24" ><van-notice-bar mode="link">{{shu.name}}</van-notice-bar></van-col>
+        <van-col span="24" ><van-notice-bar>{{shu.name}}</van-notice-bar></van-col>
         </div>
     </van-index-bar>
     </van-row>
