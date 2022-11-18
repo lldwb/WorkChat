@@ -24,8 +24,8 @@
         <div v-for="(sju,i) in shuju">
             <van-row type="flex">
         <van-col span="24" style="margin-bottom: 10px;border-bottom:1px solid #000">
-            <img src="1.jpg"  width="80px" height="60px"/><a style="margin-bottom: 30px"> 安然的尾巴</a>
-            <van-cell value="这是我们的朋友圈" />
+            <img src="1.jpg"  width="80px" height="60px"/><a style="margin-bottom: 30px"> {{sju.username}}</a>
+            <van-cell value="{{sju.content}}" />
         </van-col>
             </van-row>
         </div>
