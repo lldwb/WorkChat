@@ -58,22 +58,27 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public User getIdUser(int id) {
-        try {
-            ResultSet rs = mySqlUtil.queryResultSet("select * from user where id=?", id);
-            User user = new User();
-            if (rs.next()) {
-                user.setId(rs.getInt("id"));
-                user.setName(rs.getString("name"));
-                user.setPwd(rs.getString("pwd"));
-                user.setUnitId(rs.getInt("unitId"));
-                user.setRemark(rs.getString("remark"));
-                rs.close();
-            }
-            return user;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            return null;
+        User user = null;
+        for (User users:mySqlUtil.queryList(User.class,"select * from user where id=?", id)){
+            user = users;
         }
+        return user;
+//        try {
+//            ResultSet rs = mySqlUtil.queryResultSet("select * from user where id=?", id);
+//            User user = new User();
+//            if (rs.next()) {
+//                user.setId(rs.getInt("id"));
+//                user.setName(rs.getString("name"));
+//                user.setPwd(rs.getString("pwd"));
+//                user.setUnitId(rs.getInt("unitId"));
+//                user.setRemark(rs.getString("remark"));
+//                rs.close();
+//            }
+//            return user;
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//            return null;
+//        }
     }
 
     @Override
@@ -83,22 +88,27 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public User getNameUser(String name) {
-        try {
-            ResultSet rs = mySqlUtil.queryResultSet("select * from user where name=?", name);
-            User user = new User();
-            if (rs.next()) {
-                user.setId(rs.getInt("id"));
-                user.setName(rs.getString("name"));
-                user.setPwd(rs.getString("pwd"));
-                user.setUnitId(rs.getInt("unitId"));
-                user.setRemark(rs.getString("remark"));
-                rs.close();
-            }
-            return user;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            return null;
+        User user = null;
+        for (User users:mySqlUtil.queryList(User.class,"select * from user where name=?", name)){
+            user = users;
         }
+        return user;
+//        try {
+//            ResultSet rs = mySqlUtil.queryResultSet("select * from user where name=?", name);
+//            User user = new User();
+//            if (rs.next()) {
+//                user.setId(rs.getInt("id"));
+//                user.setName(rs.getString("name"));
+//                user.setPwd(rs.getString("pwd"));
+//                user.setUnitId(rs.getInt("unitId"));
+//                user.setRemark(rs.getString("remark"));
+//                rs.close();
+//            }
+//            return user;
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//            return null;
+//        }
     }
 
     @Override

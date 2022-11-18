@@ -30,9 +30,11 @@
     new Vue({
         el: "#div1",
         data: {
-            value:'',
-            show: false,
+            // value:'',
+            // show: false,
+			// 名称
             name: '',
+			// 密码
             pwd:'',
         },
         methods:{
@@ -41,8 +43,8 @@
 					url: "https://restapi.amap.com/v3/ip?output=json&key=dec3611ac90e3eab6024e83148b154d8",
 					dataType: "JSON",
 					success: function(result) {
-						this.show = true;
-						this.restapi = result;
+						// this.show = true;
+						// this.restapi = result;
 					},
 					error: function() {
 						$()
