@@ -34,12 +34,13 @@
                         <input placeholder="请输入关键字" v-model="KeyWord">
                         <van-icon class="clear-icon" name="clear" v-show="KeyWord" @click="clearSearchInput"/>
                     </van-icon>
+                    <div v-for="shu in myshu">
+                        <p>{{shu.name}}</p>
+                    </div>
                 </section>
-
             </van-tab>
             <!--标题设置导航-->
             <van-tab title="设置" name="c">
-
                 <van-image width="100%" height="20%" src="img/welc.jpg"/>
                 <van-button color="#2e86de" url="index.html" size="large" style="margin-top: 6px;margin-bottom: 5px;">返回聊天界面</van-button>
                 <van-button color="#2e86de"  size="large" @click="logout" style="margin-bottom: 5px;">退出登录</van-button>
@@ -93,6 +94,27 @@
             activeName: 'a',
             container: null ,
             KeyWord:'',
+            myshu:{}
+        },
+        mounted(){
+           var that=this;
+            setTimeout(function (){
+                $.ajax({
+                    url:'GetUnitIdUser',
+                    dataType:'JSON',
+                    type:'Get',
+                    data: {
+                        unitId:1
+                    },
+                    success:function (result){
+                        that.myshu=result;
+                        console.log(that.myshu);
+                    },
+                    error:function (){
+                        console.log("失败了");
+                    }
+                })
+            },200)
         },
 
         methods:{
