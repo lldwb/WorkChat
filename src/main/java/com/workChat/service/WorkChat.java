@@ -19,6 +19,8 @@ public interface WorkChat {
     User getIdUser(int id);
     //根据单位编号返回用户集合
     List<User> getUnitIdUser(int unitId);
+    //根据名称返回用户集合
+    User getNameUser(String name);
 
     //创建单位 陈强
     int addUnit(String name, int userId, String remark);

@@ -82,6 +82,26 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
+    public User getNameUser(String name) {
+        try {
+            ResultSet rs = mySqlUtil.queryResultSet("select * from user where name=?", name);
+            User user = new User();
+            if (rs.next()) {
+                user.setId(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+                user.setPwd(rs.getString("pwd"));
+                user.setUnitId(rs.getInt("unitId"));
+                user.setRemark(rs.getString("remark"));
+                rs.close();
+            }
+            return user;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
     public int addChat(int userId, int receiveId, String word) {
         return mySqlUtil.update("insert into Chat(userId,receiveId,word) values(?,?,?)",userId,receiveId,word);
     }
