@@ -14,9 +14,7 @@ Vue.component("myc",{
         
         <van-col span="24" >
         <div v-for="shu in sj">
-        <van-col span="24" ><van-cel title="{{shu.name}}"/></van-col>
-        <van-col span="24" ><van-cell title="杰2" /></van-col>
-        <van-col span="24" ><van-cell title="杰3" /></van-col>
+        <van-col span="24" >{{shu.name}}</van-col>
         </div>
         </van-col>
     </van-index-bar>
