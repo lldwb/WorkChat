@@ -9,7 +9,16 @@ public class User {
     private String name;
     private String pwd;
     private int unitId;
+    private boolean show;
     private String remark;
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
+    }
 
     public int getId() {
         return id;
