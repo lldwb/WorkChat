@@ -77,8 +77,8 @@ public class WorkChatImpl implements WorkChat{
     }
 
     @Override
-    public int addWorkCircle(String title, int userId, String content) {
-        return sqlDao.addWorkCircle(title,userId,content);
+    public int addWorkCircle(String title, int userId,String userName, String content) {
+        return sqlDao.addWorkCircle(title,userId,userName,content);
     }
 
     @Override

@@ -10,17 +10,10 @@ public class WorkCircle {
     private int id;
     private String title;
     private int userId;
+
+    private String userName;
     private Timestamp time	;
-    private int unitId;
     private String content;
-
-    public int getUnitId() {
-        return unitId;
-    }
-
-    public void setUnitId(int unitId) {
-        this.unitId = unitId;
-    }
 
     public int getId() {
         return id;
@@ -44,6 +37,14 @@ public class WorkCircle {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public Timestamp getTime() {

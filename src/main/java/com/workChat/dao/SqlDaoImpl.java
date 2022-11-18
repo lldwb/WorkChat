@@ -35,8 +35,8 @@ public class SqlDaoImpl implements SqlDao {
     }
 
     @Override
-    public int addWorkCircle(String title, int userId, String content) {
-        return mySqlUtil.update("insert into WorkCircle(title,userId,content) values(?,?,?)",title,userId,content);
+    public int addWorkCircle(String title, int userId,String userName, String content) {
+        return mySqlUtil.update("insert into WorkCircle(title,userId,userName,content) values(?,?,?,?)",title,userId,userName,content);
     }
 
     @Override
