@@ -16,7 +16,7 @@ import java.io.IOException;
  * @version 1.0
  */
 //通过Id返回User对象
-@WebServlet(name = "UpdateWorkCircle", value = "/UpdateWorkCircle")
+@WebServlet(name = "GetIdUser", value = "/GetIdUser")
 public class GetIdUser extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
