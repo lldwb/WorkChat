@@ -34,11 +34,7 @@
                         <input placeholder="请输入关键字" v-model="KeyWord">
                         <van-icon class="clear-icon" name="clear" v-show="KeyWord" @click="clearSearchInput"/>
                     </van-icon>
-
-
-
                 </section>
-
             </van-tab>
             <!--标题设置导航-->
             <van-tab title="设置" name="c">
@@ -101,10 +97,12 @@
            var that=this;
             setTimeout(function (){
                 $.ajax({
-                    url:'',
+                    url:'GetUnitIdUser',
                     dataType:'JSON',
                     type:'Get',
-                    data: {'uesrId':2},//后端需要的数据
+                    data: {
+                        unitId:1
+                    },
                     success:function (result){
                         that.myshu=result;
                         console.log("成功了");
