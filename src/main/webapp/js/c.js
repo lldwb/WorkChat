@@ -11,6 +11,9 @@ Vue.component("myc",{
               <van-index-bar :index-list=listw>
               <van-col span="24" ><van-cell title="联系人" /></van-col>
               <van-col span="24" ><van-index-anchor index="1">{{sj}}</van-index-anchor></van-col>
+              <van-col span="24" ><van-cell title="杰1" /></van-col>
+               <van-col span="24" ><van-cell title="杰2" /></van-col>
+               <van-col span="24" ><van-cell title="杰3" /></van-col>
             </van-index-bar>
             </van-row>`
 })
