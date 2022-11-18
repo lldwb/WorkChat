@@ -105,18 +105,19 @@
                     data: {'unitId':1},//后端需要的数据
                     success:function (ss){//成功事件
                         that.shu=ss;//赋值
+                        this.$router.push({
+                            name:"myc",
+                            params:{
+                                listw:this.indexList,
+                                sj:this.shu,
+                            }
+                        })
                     },
                     error:function (){//失败事件
                         alert("获取失败");
                     },
                 })
-                this.$router.push({
-                    name:"myc",
-                    params:{
-                        listw:this.indexList,
-                        sj:this.shu,
-                    }
-                })
+
 
             }
         },
