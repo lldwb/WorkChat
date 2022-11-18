@@ -10,7 +10,7 @@ Vue.component("myc",{
         "        <van-index-bar :index-list=listw>\n" +
         "\n" +
         "        <van-col span=\"24\" ><van-cell title=\"联系人\" /></van-col>\n" +
-        "        <van-col span=\"24\" ><van-index-anchor index=\"1\">{{sj}}</van-index-anchor></van-col>\n" +
+        "        <van-col span=\"24\" ><van-index-anchor index=\"1\">{{this.$route.params.sj}}</van-index-anchor></van-col>\n" +
         "        <van-col span=\"24\" ><van-cell v-model='sj' /></van-col>\n" +
         "        <van-col span=\"24\" ><van-cell title=\"杰2\" /></van-col>\n" +
         "        <van-col span=\"24\" ><van-cell title=\"杰3\" /></van-col>\n" +
