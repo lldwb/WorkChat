@@ -14,7 +14,7 @@
     <div>
         <van-row>
             <van-col span="24" >
-                <van-nav-bar title="设置" left-text="返回"  left-arrow url="index.html"/>
+                <van-nav-bar title="设置" left-text="返回"  left-arrow @click="sss"/>
             </van-col>
         </van-row>
     </div>
@@ -87,7 +87,9 @@
             active: 0
         },
         methods: {
-
+sss(){
+    location.href = 'index.html';
+}
         }
     })
 </script>
