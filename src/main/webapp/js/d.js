@@ -9,7 +9,7 @@ Vue.component("myd",{
         "\n" +
         "            </van-col>\n" +
         "            <van-col span=\"10\" style=\"height: 70px\">\n" +
-        "                <van-cell center title=\"昵称\" label=\"微信号\"/>\n" +
+        "                <van-cell center title=\"微领\" label=\"184666\"/>\n" +
         "            </van-col>\n" +
         "            <van-col span=\"7\" style=\"height: 70px\">\n" +
         "                <van-cell value=\"更多\" is-link url=\"#\"/>\n" +
@@ -17,7 +17,7 @@ Vue.component("myd",{
         "        </van-row >\n" +
         "        <van-row >\n" +
         "            <van-col span=\"24\" style=\"margin-bottom: 5px\">\n" +
-        "                <van-cell title=\"服务\" icon=\"manager\" is-link url=\"#\"/>\n" +
+        "                <van-cell title=\"服务\" icon=\"manager\" is-link url=\"wxservice.html\"/>\n" +
         "            </van-col>\n" +
         "            <van-col span=\"24\" style=\"margin-bottom: 5px\">\n" +
         "                <van-cell title=\"收藏\" icon=\"good-job-o\" is-link url=\"#\"/>\n" +

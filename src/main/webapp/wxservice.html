@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css2/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="js/vant.min.js"></script>
+
+    <script src="js/d.js"></script>
+</head>
+
+<body>
+<div id="server" style="background-color: #ededed">
+    <!--头部标题-->
+    <div class="header">
+        <van-row>
+            <van-col span="5" style="background-color: #ededed;color: black;margin-top: 10px">
+                <van-button  color="#ededed" url="index.html">返回</van-button>
+            </van-col>
+            <van-col span="14">
+                <h3 style="text-align: center">服务</h3>
+            </van-col>
+            <van-col span="5" style="margin-top: 25px;text-align: right">
+                <van-icon name="weapp-nav" />
+            </van-col>
+        </van-row>
+    </div>
+        <!--内容布局 第一行-->
+        <div>
+            <van-row style="margin-bottom: 5px">
+                <van-grid >
+                    <van-col span="12" >
+                        <van-grid-item icon="refund-o"  text="收付款">
+                        </van-grid-item>
+                    </van-col>
+                    <van-col span="12">
+                        <van-grid-item icon="pending-payment"  text="钱包">
+                        </van-grid-item>
+                    </van-col>
+                </van-grid>
+            </van-row>
+        </div>
+        <!--内容布局 第二大行-->
+        <div style="background-color:white;margin-bottom: 5px">
+            <van-row >
+                <van-col span="24" >
+                    <span style="color:#595d5d;background-color: white;font-size: 10px">金融理财</span>
+                </van-col>
+            </van-row>
+            <van-row >
+                <van-grid >
+                    <van-col span="6" >
+                        <van-grid-item icon="card"  text="卡还款">
+                        </van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="balance-list"  text="理财通">
+                        </van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="pending-payment"  text="保险服务">
+                        </van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item>
+                        </van-grid-item>
+                    </van-col>
+                </van-grid>
+            </van-row>
+        </div>
+        <!--第三大行-->
+        <div style="background-color:white;margin-bottom: 5px">
+            <van-row>
+                <van-col span="24">
+                    <span style="color:#595d5d;background-color: white;font-size: 10px">生活服务</span>
+                </van-col>
+            </van-row>
+            <van-row>
+                <van-grid>
+                    <van-col span="6">
+                        <van-grid-item icon="after-sale"  text="手机充值">
+                        </van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="completed"  text="生活缴费">
+                        </van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="gem-o"  text="Q币充值">
+                        </van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="hotel-o"  text="城市服务">
+                        </van-grid-item>
+                    </van-col>
+                </van-grid >
+            </van-row>
+            <van-row>
+                <van-grid>
+                    <van-col span="6"><van-grid-item icon="smile-o"  text="腾讯公益">
+                    </van-grid-item></van-col>
+                    <van-col span="6"><van-grid-item icon="logistics"  text="医疗健康">
+                    </van-grid-item></van-col>
+                    <van-col span="6"><van-grid-item icon="qr"  text="健康码">
+                    </van-grid-item></van-col>
+                    <van-col span="6"></van-col>
+                </van-grid>
+            </van-row>
+        </div>
+        <!--第四大行-->
+        <div style="background-color:white;margin-bottom: 5px">
+            <van-row>
+                <van-col span="24">
+                    <span style="color:#595d5d;background-color: white;font-size: 10px">交通出行</span>
+                </van-col>
+            </van-row>
+            <van-row>
+                <van-grid>
+                    <van-col span="6">
+                        <van-grid-item icon="upgrade"  text="出行服务"></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="guide-o"  text="火车票机票"></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="phone-circle"  text="滴滴出行"></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="vip-card"  text="酒店"></van-grid-item>
+                    </van-col>
+                </van-grid>
+            </van-row>
+            <van-row>
+                <van-grid>
+                    <van-col span="6">
+                        <van-grid-item icon="graphic"  text="T3打车"></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item></van-grid-item>
+                    </van-col>
+                </van-grid>
+            </van-row>
+        </div>
+        <!--第五大行-->
+        <div style="background-color:white;margin-bottom: 5px">
+            <van-row>
+                <van-col span="24">
+                    <span style="color:#595d5d;background-color: white;font-size: 10px">购物消费</span>
+                </van-col>
+            </van-row>
+            <van-row>
+                <van-grid>
+                    <van-col span="6">
+                        <van-grid-item icon="gift-card"  text="腾讯荟聚"></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="shopping-cart-o"  text="京东购物"></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="phone-o"  text="美团外卖"></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="fire-o"  text="电影演出"></van-grid-item>
+                    </van-col>
+                </van-grid>
+            </van-row>
+            <van-row>
+                <van-grid>
+                    <van-col span="6">
+                        <van-grid-item icon="cart-o"  text="美团"></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="cart-circle-o"  text="拼多多"></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="coupon-o"  text="唯品会"></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item icon="cluster-o"  text="转转二手"></van-grid-item>
+                    </van-col>
+                </van-grid>
+            </van-row>
+            <van-row>
+                <van-grid>
+                    <van-col span="6">
+                        <van-grid-item icon="wap-home-o"  text="贝壳找房"></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item></van-grid-item>
+                    </van-col>
+                    <van-col span="6">
+                        <van-grid-item></van-grid-item>
+                    </van-col>
+                </van-grid>
+            </van-row>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+<style>
+    .header{
+        text-alight:center;
+        border:1px solid #f1f2f6;
+        border-top-left-radius:15px;
+        border-top-right-radius:15px;
+    }
+</style>
+<script>
+    new Vue({
+        el: '#server',
+        data: {
+
+        }
+    })
+</script>
+

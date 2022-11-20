@@ -11,13 +11,20 @@
 </head>
 <body>
 <div id="set" type="flex" style="background-color:  #c0ccda">
-    <div>
+    <div class="header">
         <van-row>
-            <van-col span="24" >
-                <van-nav-bar title="设置" left-text="返回"  left-arrow @click-left="onClickLeft"/>
+            <van-col span="5" style="background-color: #c0ccda;color: black;margin-top: 10px">
+                <van-button  color="#c0ccda" url="index.html">返回</van-button>
+            </van-col>
+            <van-col span="14">
+                <h3 style="text-align: center">设置</h3>
+            </van-col>
+            <van-col span="5" style="margin-top: 25px;text-align: right">
+                <van-icon name="weapp-nav" />
             </van-col>
         </van-row>
     </div>
+
 
     <div>
         <van-row type="flex">

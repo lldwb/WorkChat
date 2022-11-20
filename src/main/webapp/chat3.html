@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>聊天界面</title>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/vue.js"></script>
+  <link rel="stylesheet" href="css2/index.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script src="js/vant.min.js"></script>
+  <script src="js/a.js"></script>
+</head>
+
+<body>
+<div id="app">
+  <!--聊天头部名字展示-->
+  <div class="header">
+    <van-row>
+      <van-col span="5">
+        <van-button color="#f1f2f6" url="index.html">返回</van-button>
+      </van-col>
+      <van-col span="14">
+        <h3>{{list[0].name}}</h3>
+      </van-col>
+      <van-col span="5">
+
+      </van-col>
+    </van-row>
+  </div>
+  <!--聊天内容-->
+  <!-- <div v-for="item in list" :key="item.id" :class="item.id=='2'?'atalk':'btalk'">-->
+  <div class="main">
+    <div class="talkshow">
+      <div v-for="item in list" :class="item.id=='2'?' atalk ':'btalk'">
+        <span>{{item.content}}</span>
+      </div>
+    </div>
+  </div>
+  <!--发送消息-->
+  <div class="sendbox">
+    <input type="text" v-model="wordone" class="inputword" @keyup.enter="sendmsg1" />
+    <input type="button" value="发送" @click="sendmsg1" class="btnsend" />
+  </div>
+</div>
+</body>
+</html>
+<script>
+  // {
+  // 	//指定0.1秒刷新一次
+  // 	setInterval(function() {
+  // 		location.reload()
+  // 	}, 1000);
+  // }
+  // setTimeout()
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      list: [{
+        id: 1,
+        url: "img/xx.jpg",
+        name: '小林同学',
+        content: '看我奥特曼头像好看吗'
+      }, {
+        id: 2,
+        url: "img/xd.jpg",
+        name: '微领同学',
+        content: '正义之光'
+      }],
+      wordone: '',
+      wordtwo: ''
+    },
+    methods: {
+      //定义点击发送按钮出发事件
+      //定时刷新
+
+      sendmsg1() {
+        this.list.push({
+          id: 1,
+          name: "wj",
+          content: this.wordone
+        });
+
+        $.ajax({
+          url: "AddGroupChat",
+          //把输入框的内容发送到后台
+          data: {
+            //发送方id
+            userId: "1",
+            //接受方id
+            unitId: "2",
+            //发送信息
+            word: this.wordone
+            //时间
+          },
+          success(result) {
+            console.log("成功")
+            this.wordone = ''
+          },
+          error() {
+            console.log("失败")
+          }
+        })
+      },
+      sendmsg2() {
+        // this.list.push({id:2,name:"wjb",content:this.wordtwo})
+      }
+    },
+
+  })
+</script>
+<style>
+  body {
+    background-color: #f1f2f6;
+  }
+
+  #box1,
+  #box2 {
+    width: 250px;
+    height: 400px;
+    background-color: pink;
+    margin: 50px 90px;
+    border-radius: 15px;
+  }
+
+  #box1 {
+    float: left;
+  }
+
+  #box2 {
+    float: right;
+  }
+
+  .header {
+    text-align: center;
+    border: 1px solid #dfe6e9;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  /*这里需要去除标题标签自带间距*/
+  h3 {
+
+    margin: 5px;
+    padding: 2px;
+    color: black;
+  }
+
+  .main {
+    hright: 85%;
+    overflow: scroll;
+    background-color: #f1f2f6;
+  }
+
+  div::-webkit-scrollbar {
+    display: none;
+  }
+
+  .atalk {
+    margin: 10px;
+  }
+
+  .atalk span {
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 5px 10px;
+    background-color: white;
+  }
+
+  .btalk {
+    text-align: right;
+    margin: 10px;
+  }
+
+  .btalk span {
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid #6ddd0a;
+    border-radius: 15px;
+    background-color: #6ddd0a;
+  }
+
+  /*底部发送消息的设置*/
+  .sendbox {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+
+  .inputword {
+    outline: none;
+    width: 80%;
+    height: 25px;
+    border-radius: 15px;
+    text-indent: 12px;
+  }
+
+  .btnsend {
+    outline: none;
+    width: 13%;
+    height: 25px;
+    border-radius: 15px;
+    border: 1px solid grey;
+    margin-left: 2%;
+  }
+</style>
