@@ -11,7 +11,7 @@ Vue.component("mya",{
         "            <van-col span=\"24\" style=\"margin-bottom: 5px\"><van-cell title=\"附近\" icon=\"location\" is-link url=\"#\"/></van-col>\n" +
         "            <van-col span=\"24\"><van-cell title=\"购物\" icon=\"lock\" is-link url=\"#\"/></van-col>\n" +
         "            <van-col span=\"24\" style=\"margin-bottom: 5px\"><van-cell title=\"游戏\" icon=\"service\" is-link url=\"#\"/></van-col>\n" +
-        "            <van-col span=\"24\"><van-cell title=\"小程序\" icon=\"weapp-nav\" is-link url=\"#\"/></van-col>\n" +
+        "            <van-col span=\"24\"><van-cell title=\"小程序\" icon=\"weapp-nav\" is-link url=\"applets.html\"/></van-col>\n" +
         "        </van-row>\n" +
         "    </div>"
 })
