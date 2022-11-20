@@ -23,13 +23,13 @@ Vue.component("myd",{
         "                <van-cell title=\"收藏\" icon=\"good-job-o\" is-link url=\"#\"/>\n" +
         "            </van-col>\n" +
         "            <van-col span=\"24\">\n" +
-        "                <van-cell title=\"朋友圈\" icon=\"friends-o\" is-link url=\"#\"/>\n" +
+        "                <van-cell title=\"朋友圈\" icon=\"friends-o\" is-link url=\"qyq.html\"/>\n" +
         "            </van-col>\n" +
         "            <van-col span=\"24\">\n" +
         "                <van-cell title=\"视频号\" icon=\"video\" is-link url=\"#\"/>\n" +
         "            </van-col>\n" +
         "            <van-col span=\"24\">\n" +
-        "                <van-cell title=\"卡包\" icon=\"after-sale\" is-link url=\"#\"/>\n" +
+        "                <van-cell title=\"卡包\" icon=\"after-sale\" is-link url=\"kabao.html\"/>\n" +
         "            </van-col>\n" +
         "            <van-col span=\"24\">\n" +
         "                <van-cell title=\"表情\" icon=\"smile-o\" is-link url=\"#\"/>\n" +

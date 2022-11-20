@@ -12,11 +12,16 @@
 <body>
 <div id="set" type="flex" style="background-color:  #c0ccda">
     <div>
-        <van-row>
-            <van-col span="24" >
-                <van-nav-bar title="设置" left-text="返回"  left-arrow url="setup.html"/>
-            </van-col>
-        </van-row>
+        <van-sticky>
+            <van-row type="flex"style="background-color: #F5F5F5">
+                <van-col span="10" >
+                    <van-cell value="<返回" url="index.html#/a3" style="background-color: #F5F5F5" />
+                </van-col>
+                <van-col span="14" >
+                    <van-cell value="设置" style="background-color: #F5F5F5" />
+                </van-col>
+            </van-row>
+        </van-sticky>
     </div>
 
     <div>
@@ -87,7 +92,9 @@
             active: 0
         },
         methods: {
-
+sss(){
+    location.href = 'index.html';
+}
         }
     })
 </script>
