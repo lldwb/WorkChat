@@ -11,20 +11,18 @@
 </head>
 <body>
 <div id="set" type="flex" style="background-color:  #c0ccda">
-    <div class="header">
-        <van-row>
-            <van-col span="5" style="background-color: #c0ccda;color: black;margin-top: 10px">
-                <van-button  color="#c0ccda" url="index.html">返回</van-button>
-            </van-col>
-            <van-col span="14">
-                <h3 style="text-align: center">设置</h3>
-            </van-col>
-            <van-col span="5" style="margin-top: 25px;text-align: right">
-                <van-icon name="weapp-nav" />
-            </van-col>
-        </van-row>
+    <div>
+        <van-sticky>
+            <van-row type="flex"style="background-color: #F5F5F5">
+                <van-col span="10" >
+                    <van-cell value="<返回" url="index.html#/a3" style="background-color: #F5F5F5" />
+                </van-col>
+                <van-col span="14" >
+                    <van-cell value="设置" style="background-color: #F5F5F5" />
+                </van-col>
+            </van-row>
+        </van-sticky>
     </div>
-
 
     <div>
         <van-row type="flex">
@@ -94,8 +92,8 @@
             active: 0
         },
         methods: {
-            onClickLeft() {
-                Toast('返回')
+            sss(){
+                location.href = 'index.html';
             }
         }
     })

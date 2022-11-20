@@ -75,6 +75,7 @@
 			//定时刷新
 
 			sendmsg1() {
+				var that = this
 				this.list.push({
 					id: 1,
 					name: "wj",
@@ -82,6 +83,7 @@
 				});
 
 				$.ajax({
+
 					url: "AddGroupChat",
 					//把输入框的内容发送到后台
 					data: {
@@ -90,12 +92,12 @@
 						//接受方id
 						unitId: "2",
 						//发送信息
-						word: this.wordone
+						word: that.wordone
 						//时间
 					},
 					success(result) {
 						console.log("成功")
-						this.wordone = ''
+						that.wordone = ''
 					},
 					error() {
 						console.log("失败")
