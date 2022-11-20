@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css2/index.css"/>
-    <script src="js/jquery.min.js"></script>
-    <script src="js2/vue.min.js"></script>
-    <script src="js2/vant.min.js"></script>
-    <script src="js/vue-router.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css2/index.css"/>
+  <script src="js/jquery.min.js"></script>
+  <script src="js2/vue.min.js"></script>
+  <script src="js2/vant.min.js"></script>
+  <script src="js/vue-router.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
 <div id="kb">
-<van-sticky>
+  <van-sticky>
     <van-row type="flex"style="background-color: #F5F5F5">
-        <van-col span="10" >
-            <van-cell value="<返回" url="index.html#/a3" style="background-color: #F5F5F5" />
-        </van-col>
-        <van-col span="14" >
-            <van-cell value="卡包" style="background-color: #F5F5F5" />
-        </van-col>
+      <van-col span="10" >
+        <van-cell value="<返回" url="index.html#/a3" style="background-color: #F5F5F5" />
+      </van-col>
+      <van-col span="14" >
+        <van-cell value="卡包" style="background-color: #F5F5F5" />
+      </van-col>
     </van-row>
-</van-sticky>
-<van-row type="flex">
+  </van-sticky>
+  <van-row type="flex">
     <van-col span="24">
-    <van-cell title="会员卡" icon="vip-card" is-link url="#"/>
+      <van-cell title="会员卡" icon="vip-card" is-link url="#"/>
     </van-col>
     <van-col span="24" style="margin-bottom: 5px">
-        <van-cell icon="card" is-link>
-            <template #title>
-                <span class="custom-title">交通卡</span>
-                <van-tag type="danger">new</van-tag>
-            </template>
-        </van-cell>
+      <van-cell icon="card" is-link>
+        <template #title>
+          <span class="custom-title">交通卡</span>
+          <van-tag type="danger">new</van-tag>
+        </template>
+      </van-cell>
     </van-col>
 
     <van-col span="24">
-        <van-cell title="卷和礼品卡" icon="coupon" is-link url="#"/>
+      <van-cell title="卷和礼品卡" icon="coupon" is-link url="#"/>
     </van-col>
     <van-col span="24"style="margin-bottom: 5px">
-        <van-cell title="票证" icon="manager" is-link url="#"/>
+      <van-cell title="票证" icon="manager" is-link url="#"/>
     </van-col>
-</van-row>
+  </van-row>
 </div>
 </body>
 <style>
-    .custom-title {
-        margin-right: 4px;
-        vertical-align: middle;
-    }
+  .custom-title {
+    margin-right: 4px;
+    vertical-align: middle;
+  }
 </style>
 </html>
 <script>
-    new Vue({
-        el:'#kb'
-    })
+  new Vue({
+    el:'#kb'
+  })
 </script>
