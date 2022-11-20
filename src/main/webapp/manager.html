@@ -35,22 +35,20 @@
                         <van-icon class="clear-icon" name="clear" v-show="KeyWord" @click="clearSearchInput"/>
                     </van-icon>
                 </section>
-                <div id="top">
-                    <div style="float: left" >
-                        <div>用户名</div>
-                        <div>状态</div>
-                    </div>
                 <div v-for="shu in myshu" >
-                    <div>{{shu.name}}</div>
-                    <div>{{shu.show}}</div>
-                </div>
+                    <p>序号:{{shu.id}}</p>
+                    <p>姓名:{{shu.name}}</p>
+                    <p>密码:{{shu.pwd}}</p>
+                    <p>单位:{{shu.unitId}}</p>
+                    <p>状态:{{shu.show}}</p>
+                    <p>备注:{{shu.remark}}</p>
                 </div>
             </van-tab>
             <!--标题设置导航-->
             <van-tab title="设置" name="c">
                 <van-image width="100%" height="20%" src="img/welc.jpg"/>
                 <van-button color="#2e86de" url="index.html" size="large" style="margin-top: 6px;margin-bottom: 5px;">返回聊天界面</van-button>
-                <van-button color="#2e86de"  size="large" @click="logout" style="margin-bottom: 5px;" url="register.html">退出登录</van-button>
+                <van-button color="#2e86de"  size="large" @click="logout" style="margin-bottom: 5px;"       url="register.html">退出登录</van-button>
             </van-tab>
 
         </van-tabs>
@@ -58,11 +56,6 @@
 </div>
 </body>
 <style>
-    #top{
-        margin-top: 20px;
-        margin-left: 10px;
-        width: 300px;
-    }
     .pic{
         margin: auto;
         position: absolute;
