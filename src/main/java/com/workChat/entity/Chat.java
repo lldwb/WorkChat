@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 public class Chat {
     private int id;
     private int userId;
-    private int faceId;
+    private int receiveId;
     private Timestamp time;
     private String word;
 
@@ -29,12 +29,12 @@ public class Chat {
         this.userId = userId;
     }
 
-    public int getFaceId() {
-        return faceId;
+    public int getReceiveId() {
+        return receiveId;
     }
 
-    public void setFaceId(int faceId) {
-        this.faceId = faceId;
+    public void setReceiveId(int receiveId) {
+        this.receiveId = receiveId;
     }
 
     public Timestamp getTime() {

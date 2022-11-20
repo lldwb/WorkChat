@@ -29,6 +29,9 @@
 					<van-col span="24" style="margin-bottom: 5px">
 						<van-button type="primary" size="large" @click="ui">{{register}}</van-button>
 					</van-col>
+					<van-col span="24" style="margin-bottom: 5px">
+						<van-button type="primary" size="large" @click="uis" v-if='register=="登录"'>注册</van-button>
+					</van-col>
 				</van-row>
 			</div>
 		</div>
@@ -57,11 +60,19 @@
 				pwd: '',
 			},
 			methods: {
+				uis() {
+					location.href = 'register.html?unitId=1';
+				},
 				ui() {
 					var that = this;
 					$.ajax({
-						url: URL + 'name=' + that.name + '&pwd=' + that.pwd,
+						// url: URL + 'name=' + that.name + '&pwd=' + that.pwd,
+						url: URL,
 						dataType: "JSON",
+						data: {
+							name:that.name,
+							pwd:that.pwd
+						},
 						success: function(result) {
 							if (result != null) {
 								if (result.show != null) {
@@ -85,6 +96,7 @@
 									} else {
 										console.log('错误');
 										// 密码或者账号错误
+										// import { Notify } from 'vant';
 										// Notify('密码或者账号错误');
 									};
 								} else {
