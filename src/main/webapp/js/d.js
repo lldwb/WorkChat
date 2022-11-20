@@ -17,7 +17,7 @@ Vue.component("myd",{
         "        </van-row >\n" +
         "        <van-row >\n" +
         "            <van-col span=\"24\" style=\"margin-bottom: 5px\">\n" +
-        "                <van-cell title=\"服务\" icon=\"manager\" is-link url=\"#\"/>\n" +
+        "                <van-cell title=\"服务\" icon=\"manager\" is-link url=\"wxservice.html\"/>\n" +
         "            </van-col>\n" +
         "            <van-col span=\"24\" style=\"margin-bottom: 5px\">\n" +
         "                <van-cell title=\"收藏\" icon=\"good-job-o\" is-link url=\"#\"/>\n" +
