@@ -38,6 +38,11 @@ public class WorkChatImpl implements WorkChat{
     }
 
     @Override
+    public User getNameUser(String name) {
+        return sqlDao.getNameUser(name);
+    }
+
+    @Override
     public int addChat(int userId, int receiveId, String word) {
         return sqlDao.addChat(userId,receiveId,word);
     }

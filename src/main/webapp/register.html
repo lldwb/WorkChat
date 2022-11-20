@@ -1,44 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css2/index.css"/>
-    <script src="js/jquery.min.js"></script>
-    <script src="js2/vue.min.js"></script>
-    <script src="js2/vant.min.js"></script>
-    <script src="js/vue-router.js"></script>
-    <script src="js/a.js"></script>
-    <script src="js/b.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<link rel="stylesheet" href="css2/index.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js2/vue.min.js"></script>
+		<script src="js2/vant.min.js"></script>
+		<script src="js/vue-router.js"></script>
+		<script src="js/a.js"></script>
+		<script src="js/b.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-</head>
-<body>
-<div id="div1">
-    <div style="background-color: #F5F5F5;width: 100%;height:583px;">
-        <van-row type="flex">
-            <van-col span="24" align="center"><van-cell title="工作聊天登入" /></van-col>
-            <van-col span="24" style="margin-bottom: 15px;margin-top: 30%"><van-field v-model="digit" type="digit" label="账号" placeholder="请输入账号" /></van-col>
-            <van-col span="24" style="margin-bottom:5%;"><van-field v-model="pwd" type="password" label="密码" placeholder="请输入密码" /></van-col>
-            <van-col span="24" style="margin-bottom: 5px"> <van-button type="primary" size="large" @click="ui">登录</van-button></van-col>
-        </van-row>
-    </div>
-</div>
-</body>
+	</head>
+	<body>
+		<div id="div1">
+			<div style="background-color: #F5F5F5;width: 100%;height:583px;">
+				<van-row type="flex">
+					<van-col span="24" align="center">
+						<van-cell title="工作聊天登入" />
+					</van-col>
+					<van-col span="24" style="margin-bottom: 15px;margin-top: 30%">
+						<van-field v-model="name" type="text" label="账号" placeholder="请输入账号" />
+					</van-col>
+					<van-col span="24" style="margin-bottom:5%;">
+						<van-field v-model="pwd" type="password" label="密码" placeholder="请输入密码" />
+					</van-col>
+					<van-col span="24" style="margin-bottom: 5px">
+						<van-button type="primary" size="large" @click="ui">{{register}}</van-button>
+					</van-col>
+				</van-row>
+			</div>
+		</div>
+	</body>
 </html>
 <script>
-    new Vue({
-        el: "#div1",
-        data: {
-            value:'',
-            show: false,
-            digit: '',
-            pwd:'',
-        },
-        methods:{
-            ui(){
-                window.location.href = 'http://localhost:63342/weixin/weixin2.html?_ijt=7kprg7fjef9074hq5vlo0j8aps&_ij_reload=RELOAD_ON_SAVE#/'
-            }
-        }
-    })
+	{
+		var URL = "GetNameUser?";
+		var registers = '登录'
+		if (getQueryVariable("unitId") != null) {
+			console.log(getQueryVariable("unitId"));
+			URL = "AddUser?unitId=" + getQueryVariable("unitId") + '&';
+			registers = '注册';
+		} else {
+			console.log(getQueryVariable("unitId"));
+		}
+		var k = new Vue({
+			el: "#div1",
+			data: {
+				register: registers,
+				// value:'',
+				show: false,
+				// 名称
+				name: '',
+				// 密码
+				pwd: '',
+			},
+			methods: {
+				ui() {
+					var that = this;
+					$.ajax({
+						url: URL + 'name=' + that.name + '&pwd=' + that.pwd,
+						dataType: "JSON",
+						success: function(result) {
+							if (result != null) {
+								if (result.show != null) {
+									that.show = result.show;
+									console.log('');
+									// this.restapi = result;
+									console.log(that.pwd);
+									console.log(that.pwd == result.pwd);
+									console.log(result.pwd);
+									if (that.pwd == result.pwd) {
+										//用户id
+										sessionStorage.setItem('id', result.id);
+										//用户名字
+										sessionStorage.setItem('name', result.name);
+										//用户权限
+										sessionStorage.setItem('show', result.show);
+										//用户单位id
+										sessionStorage.setItem('unitId', result.unitId);
+										console.log('成功');
+										location.href = 'index.html';
+									} else {
+										console.log('错误');
+										// 密码或者账号错误
+										// Notify('密码或者账号错误');
+									};
+								} else {
+									location.href = 'register.html';
+								}
+							} else {
+								console.log('错误');
+								// 密码或者账号错误
+								// Notify('密码或者账号错误');
+							};
+						},
+						error: function() {
+							$()
+						}
+					});
+				}
+			}
+		})
+	}
+
+	function getQueryVariable(variable) {
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		for (var i = 0; i < vars.length; i++) {
+			var pair = vars[i].split("=");
+			if (pair[0] == variable) {
+				return pair[1];
+			}
+		}
+		return (null);
+	}
 </script>
