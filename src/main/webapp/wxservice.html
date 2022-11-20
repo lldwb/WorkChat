@@ -16,17 +16,19 @@
 <div id="server" style="background-color: #ededed">
     <!--头部标题-->
     <div class="header">
-        <van-row>
-            <van-col span="5" style="background-color: #ededed;color: black;margin-top: 10px">
-                <van-button  color="#ededed" url="index.html">返回</van-button>
-            </van-col>
-            <van-col span="14">
-                <h3 style="text-align: center">服务</h3>
-            </van-col>
+            <van-sticky>
+                <van-row type="flex"style="background-color: #F5F5F5">
+                    <van-col span="5" >
+                        <van-cell value="<返回" url="index.html#/a1" style="background-color: #F5F5F5" />
+                    </van-col>
+                    <van-col span="14" >
+                        <van-cell value="小程序" style="background-color: #F5F5F5" />
+                    </van-col>
             <van-col span="5" style="margin-top: 25px;text-align: right">
                 <van-icon name="weapp-nav" />
             </van-col>
-        </van-row>
+                </van-row>
+            </van-sticky>
     </div>
         <!--内容布局 第一行-->
         <div>

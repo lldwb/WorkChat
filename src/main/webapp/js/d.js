@@ -9,7 +9,7 @@ Vue.component("myd",{
         "\n" +
         "            </van-col>\n" +
         "            <van-col span=\"10\" style=\"height: 70px\">\n" +
-        "                <van-cell center title=\"昵称\" label=\"微信号\"/>\n" +
+        "                <van-cell center title=\"昵称：我\" label=\"微信号\"/>\n" +
         "            </van-col>\n" +
         "            <van-col span=\"7\" style=\"height: 70px\">\n" +
         "                <van-cell value=\"更多\" is-link url=\"#\"/>\n" +
