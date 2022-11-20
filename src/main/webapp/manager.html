@@ -34,10 +34,17 @@
                         <input placeholder="请输入关键字" v-model="KeyWord">
                         <van-icon class="clear-icon" name="clear" v-show="KeyWord" @click="clearSearchInput"/>
                     </van-icon>
-                    <div v-for="shu in myshu">
-                        <p>{{shu.name}}</p>
-                    </div>
                 </section>
+                <div id="top">
+                    <div style="float: left" >
+                        <div>用户名</div>
+                        <div>状态</div>
+                    </div>
+                <div v-for="shu in myshu" >
+                    <div>{{shu.name}}</div>
+                    <div>{{shu.show}}</div>
+                </div>
+                </div>
             </van-tab>
             <!--标题设置导航-->
             <van-tab title="设置" name="c">
@@ -51,6 +58,11 @@
 </div>
 </body>
 <style>
+    #top{
+        margin-top: 20px;
+        margin-left: 10px;
+        width: 300px;
+    }
     .pic{
         margin: auto;
         position: absolute;
@@ -118,6 +130,7 @@
         },
 
         methods:{
+
             clearSearchInput(){
                 this.KeyWord = '';
 
