@@ -41,7 +41,7 @@
             <span>微信</span>
             <template #icon="props">
                 <router-link to="/">
-                    <img src="img/信息.png"/>
+                    <img src="img/信息.png" @click="showb"/>
                 </router-link>
             </template>
         </van-tabbar-item>
@@ -96,21 +96,25 @@
             indexList: [1, 2, 3, 4, 5],
             shu:{},
         },
-        methods: {
-            showc(){
-                var that=this
+        mounted(){
+            var that=this;
+            setTimeout(function (){
                 $.ajax({
                     url: "GetUnitIdUser",//后端链接
                     dataType: "JSON",//返回类型
                     data: {'unitId':1},//后端需要的数据
                     success:function (ss){//成功事件
                         that.shu=ss;//赋值
-
+                        alert("获取成功");
                     },
                     error:function (){//失败事件
                         alert("获取失败");
                     },
                 })
+            },500)
+        },
+        methods: {
+            showc(){
                 this.$router.push({
                     name:"myc",
                     params:{
@@ -118,8 +122,14 @@
                         sj:this.shu,
                     }
                 })
-
-
+            },
+            showb(){
+                this.$router.push({
+                    name:"myb",
+                    params:{
+                        sj:this.shu,
+                    }
+                })
             }
         },
         components:{
