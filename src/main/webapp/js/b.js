@@ -10,7 +10,7 @@ Vue.component("myb",{
                     <img src="https://img01.yzcdn.cn/vant/cat.jpeg" width="50px" height="50px"  />
                 </van-col>
                <van-col span="17" style="height: 70px;" >
-                    <van-notice-bar style="margin-top: 5%" color="black" background="white">{{shu.name}}</van-notice-bar>
+                    <van-cell style="margin-top: 5%" url="chat.html?receiveId=1">{{shu.name}}</van-cell>
                 </van-col>
            </van-row >
         </div\>`
