@@ -83,7 +83,7 @@ public class SqlDaoImpl implements SqlDao {
 
     @Override
     public List<User> getUnitIdUser(int unitId) {
-        return mySqlUtil.queryList(User.class,"select * from user where id=?", unitId);
+        return mySqlUtil.queryList(User.class,"select * from user where unitId=?", unitId);
     }
 
     @Override
