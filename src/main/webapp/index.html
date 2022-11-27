@@ -124,17 +124,18 @@
 					var that = this;
 					setTimeout(function() {
 						$.ajax({
-							url: "GetUnitIdUser", //后端链接
+							url: "GetUnitIdUserNid", //后端链接
 							dataType: "JSON", //返回类型
 							data: {
-								'unitId': 1
+								unitId: 1,
+								id:sessionStorage.getItem('id')
 							}, //后端需要的数据
 							success: function(ss) { //成功事件
 								that.shu = ss; //赋值
-								alert("获取成功");
+								// alert("获取成功");
 							},
 							error: function() { //失败事件
-								alert("获取失败");
+								// alert("获取失败");
 							},
 						})
 					}, 200)

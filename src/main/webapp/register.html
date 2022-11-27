@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>登录	</title>
+		<title>登录 </title>
 		<link rel="stylesheet" href="css2/index.css" />
 		<script src="js/jquery.min.js"></script>
 		<script src="js2/vue.min.js"></script>
@@ -21,10 +21,10 @@
 						<van-cell title="工作聊天登入" />
 					</van-col>
 					<van-col span="24" style="margin-bottom: 15px;margin-top: 30%">
-						<van-field v-model="name" type="text" label="账号" placeholder="请输入账号" />
+						<van-field v-model.trim="name" type="text" label="账号" placeholder="请输入账号" />
 					</van-col>
 					<van-col span="24" style="margin-bottom:5%;">
-						<van-field v-model="pwd" type="password" label="密码" placeholder="请输入密码" />
+						<van-field v-model.trim="pwd" type="password" label="密码" placeholder="请输入密码" />
 					</van-col>
 					<van-col span="24" style="margin-bottom: 5px">
 						<van-button type="primary" size="large" @click="ui">{{register}}</van-button>
@@ -64,59 +64,68 @@
 					location.href = 'register.html?unitId=1';
 				},
 				ui() {
-					var that = this;
-					$.ajax({
-						// url: URL + 'name=' + that.name + '&pwd=' + that.pwd,
-						url: URL,
-						dataType: "JSON",
-						data: {
-							name:that.name,
-							pwd:that.pwd
-						},
-						success: function(result) {
-							if (result != null) {
-								if (result.show != null) {
-									that.show = result.show;
-									console.log('');
-									// this.restapi = result;
-									console.log(that.pwd);
-									console.log(that.pwd == result.pwd);
-									console.log(result.pwd);
-									if (that.pwd == result.pwd) {
-										//用户id
-										sessionStorage.setItem('id', result.id);
-										//用户名字
-										sessionStorage.setItem('name', result.name);
-										//用户权限
-										sessionStorage.setItem('show', result.show);
-										//用户单位id
-										sessionStorage.setItem('unitId', result.unitId);
-										console.log('成功');
-										location.href = 'index.html';
-									} else {
-										console.log('错误');
-										// 密码或者账号错误
-										// import { Notify } from 'vant';
-										// Notify('密码或者账号错误');
-									};
-								} else {
-									location.href = 'register.html';
-								}
-							} else {
-								console.log('错误');
-								// 密码或者账号错误
-								// Notify('密码或者账号错误');
-							};
-						},
-						error: function() {
-							$()
-						}
-					});
+					if (this.name == '' || this.pwd == '') {
+						console.log('错误');
+						// 密码或者账号错误
+						alert('密码或者账号不能为空');
+					} else {
+						reg(this)
+					}
 				}
 			}
 		})
 	}
-
+	//访问后台
+	function reg(that) {
+		// var that = this;
+		$.ajax({
+			// url: URL + 'name=' + that.name + '&pwd=' + that.pwd,
+			url: URL,
+			dataType: "JSON",
+			data: {
+				name: that.name,
+				pwd: that.pwd
+			},
+			success: function(result) {
+				if (result != null) {
+					if (result.show != null) {
+						that.show = result.show;
+						console.log('');
+						// this.restapi = result;
+						console.log(that.pwd);
+						console.log(that.pwd == result.pwd);
+						console.log(result.pwd);
+						if (that.pwd == result.pwd) {
+							//用户id
+							sessionStorage.setItem('id', result.id);
+							//用户名字
+							sessionStorage.setItem('name', result.name);
+							//用户权限
+							sessionStorage.setItem('show', result.show);
+							//用户单位id
+							sessionStorage.setItem('unitId', result.unitId);
+							console.log('成功');
+							location.href = 'index.html';
+						} else {
+							console.log('错误');
+							// 密码或者账号错误
+							alert('密码或者账号错误');
+						};
+					} else {
+						location.href = 'register.html';
+					}
+				} else {
+					console.log('错误');
+					// 密码或者账号错误
+					alert('密码或者账号错误');
+				};
+			},
+			error: function() {
+				$()
+			}
+		});
+	}
+	//获取URL参数
 	function getQueryVariable(variable) {
 		var query = window.location.search.substring(1);
 		var vars = query.split("&");
