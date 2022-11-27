@@ -7,7 +7,8 @@ Vue.component("myb",{
     methods:{
         ss (i){
             sj:this.$route.params.sj,
-                location.href = 'chat.html?receiveId='+sj[i].id;
+                // location.href = 'chat.html?receiveId='+sj[i].id;
+                location.href = 'chat.html?receiveId='+i;
         }
     },
     template : `<div style="background-color:#F5F5F5;width: 100%;height: 540px">
@@ -16,7 +17,7 @@ Vue.component("myb",{
                     <img src="https://img01.yzcdn.cn/vant/cat.jpeg" width="50px" height="50px"  />
                 </van-col>
                <van-col span="17" style="height: 70px;" >
-                    <van-cell style="margin-top: 5%" @click="ss(i)">{{shu.name}}</van-cell>
+                    <van-cell style="margin-top: 5%" @click="ss(sj[i].id)">{{shu.name}}</van-cell>
                 </van-col>
            </van-row >
         </div\>`

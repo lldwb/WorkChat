@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 //根据单位编号返回用户集合过滤自己
 @WebServlet(name = "GetUserNid", value = "/GetUserNid")
-public class GetUnitIdUserNid extends HttpServlet {
+public class GetUserNid extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
