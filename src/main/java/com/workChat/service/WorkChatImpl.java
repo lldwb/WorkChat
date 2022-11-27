@@ -38,8 +38,8 @@ public class WorkChatImpl implements WorkChat{
     }
 
     @Override
-    public List<User> getUnitIdUserNid(int unitId, int id) {
-        return sqlDao.getUnitIdUserNid(unitId,id);
+    public List<User> getUserNid(int id) {
+        return sqlDao.getUserNid(id);
     }
 
     @Override

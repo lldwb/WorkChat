@@ -19,8 +19,8 @@ public interface SqlDao {
     User getIdUser(int id);
     //根据单位编号返回用户集合 黄为东
     List<User> getUnitIdUser(int unitId);
-    //根据单位编号返回用户集合过滤自己
-    List<User> getUnitIdUserNid(int unitId, int id);
+    //根据过滤自己返回用户集合
+    List<User> getUserNid(int id);
     //根据名称返回用户集合
     User getNameUser(String name);
 

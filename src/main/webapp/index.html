@@ -113,7 +113,7 @@
 				]
 			})
 
-			new Vue({
+			var vue = new Vue({
 				el: "#div1",
 				data: {
 					active: 0,
@@ -124,10 +124,9 @@
 					var that = this;
 					setTimeout(function() {
 						$.ajax({
-							url: "GetUnitIdUserNid", //后端链接
+							url: "GetUserNid", //后端链接
 							dataType: "JSON", //返回类型
 							data: {
-								unitId: 1,
 								id:sessionStorage.getItem('id')
 							}, //后端需要的数据
 							success: function(ss) { //成功事件
