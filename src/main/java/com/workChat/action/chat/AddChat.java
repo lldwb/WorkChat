@@ -30,4 +30,9 @@ public class AddChat extends HttpServlet {
         String json = om.writeValueAsString(workChat.addChat(Integer.parseInt(userId),Integer.parseInt(receiveId),word));
         resp.getWriter().print(json);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doGet(req, resp);
+    }
 }

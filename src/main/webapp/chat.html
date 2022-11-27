@@ -32,7 +32,7 @@
 			<!-- <div v-for="chat in list" :key="chat.id" :class="chat.id=='2'?'atalk':'btalk'"> -->
 			<div class="main">
 				<div class="talkshow">
-					<div v-for="chat in list" :class="chat.userId=='receiveId'?' atalk ':'btalk'">
+					<div v-for="chat in list" :class="chat.userId!=userId?'atalk':'btalk'">
 						<!-- <div v-for="chat in list" :class="btalk"> -->
 						<span>{{chat.word}}</span>
 
@@ -53,20 +53,13 @@
 		el: '#app',
 		data: {
 			list: null,
-			// [{
-			// 	id: 1,
-			// 	url: "img/xx.jpg",
-			// 	name: '小新同学',
-			// 	word: '早上好呀'
-			// }, {
-			// 	id: 2,
-			// 	url: "img/xd.jpg",
-			// 	name: '小哆同学',
-			// 	word: '早啊'
-			// }]
-
-			wordone: '',
+			//我方id
+			userId: sessionStorage.getItem('id'),
+			// userId: 1,
+			//接受方id
 			receiveId: getQueryVariable("receiveId"),
+			//输入的值
+			wordone: null,
 			wordtwo: ''
 		},
 		mounted() {
@@ -81,13 +74,14 @@
 				$.ajax({
 					url: "GetUserIdReceiveIdChat",
 					dataType: "JSON",
+					type: 'post',
 					//把输入框的内容发送到后台
 					data: {
 						//发送方id
-						userId: sessionStorage.getItem('id'),
+						userId: that.userId,
 						// userId: 1,
 						//接受方id
-						receiveId: getQueryVariable("receiveId"),
+						receiveId: that.receiveId,
 						// receiveId: 2,
 					},
 					success(result) {
@@ -102,30 +96,22 @@
 						console.log("失败")
 					}
 				})
-			}, 500);
+			}, 300);
 		},
 		methods: {
 			//定义点击发送按钮出发事件
-			//定时刷新
-
 			sendmsg1() {
-				// this.list.push({
-				// 	id: 1,
-				// 	name: "wj",
-				// 	content: this.wordone
-				// });
-
 				$.ajax({
-					url: "AddGroupChat",
+					url: "AddChat",
+					type: 'post',
 					//把输入框的内容发送到后台
 					data: {
 						//发送方id
-						userId: sessionStorage.getItem('id'),
+						userId: this.userId,
 						//接受方id
-						unitId: getQueryVariable("receiveId"),
+						receiveId: this.receiveId,
 						//发送信息
 						word: this.wordone
-						//时间
 					},
 					success(result) {
 						console.log("成功");
