@@ -41,7 +41,7 @@
 			</div>
 			<!--发送消息-->
 			<div class="sendbox">
-				<input type="text" v-model="wordone" class="inputword" @keyup.enter="sendmsg1" />
+				<input type="text" v-model.trim="wordone" class="inputword" @keyup.enter="sendmsg1" />
 				<input type="button" value="发送" @click="sendmsg1" class="btnsend" />
 			</div>
 			<!-- </div> -->
@@ -85,9 +85,9 @@
 						// receiveId: 2,
 					},
 					success(result) {
-						console.log(result);
-						console.log("成功");
-						console.log(that.list);
+						// console.log(result);
+						// console.log("成功");
+						// console.log(that.list);
 						if (that.list != result) {
 							that.list = result;
 						}
@@ -96,7 +96,7 @@
 						console.log("失败")
 					}
 				})
-			}, 300);
+			}, 500);
 		},
 		methods: {
 			//定义点击发送按钮出发事件
@@ -115,7 +115,7 @@
 					},
 					success(result) {
 						console.log("成功");
-						this.wordone = '';
+						vm.wordone = null;
 					},
 					error() {
 						console.log("失败")
