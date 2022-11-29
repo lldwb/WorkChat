@@ -15,6 +15,7 @@
 	<body>
 		<div id="app">
 			<!--聊天头部名字展示-->
+			<van-sticky>
 			<div class="header">
 				<van-row>
 					<van-col span="5">
@@ -28,9 +29,10 @@
 					</van-col>
 				</van-row>
 			</div>
+			</van-sticky>
 			<!--聊天内容-->
 			<!-- <div v-for="chat in list" :key="chat.id" :class="chat.id=='2'?'atalk':'btalk'"> -->
-			<div class="main">
+			<div class="main" style="margin-bottom: 70px">
 				<div class="talkshow">
 					<div v-for="chat in list" :class="chat.userId!=userId?'atalk':'btalk'">
 						<!-- <div v-for="chat in list" :class="btalk"> -->
@@ -169,6 +171,7 @@
 		border: 1px solid #dfe6e9;
 		border-top-left-radius: 15px;
 		border-top-right-radius: 15px;
+		background-color: #F5F5F5;
 	}
 
 	/*这里需要去除标题标签自带间距*/
@@ -225,6 +228,7 @@
 		border-bottom-right-radius: 15px;
 		margin-right: 2%;
 		margin-left: 2%;
+		background-color: #F5F5F5;
 	}
 
 	.inputword {
@@ -233,6 +237,7 @@
 		height: 25px;
 		border-radius: 15px;
 		text-indent: 12px;
+		margin-top: 4%;
 	}
 
 	.btnsend {

@@ -138,7 +138,12 @@
 							},
 						})
 					}, 200)
-				},
+
+						switch( window.location.pathname){
+						default : this.active = 3;
+						}
+
+					},
 				methods: {
 					showc() {
 						this.$router.push({
