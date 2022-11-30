@@ -21,10 +21,10 @@
 						<van-cell title="工作聊天登入" />
 					</van-col>
 					<van-col span="24" style="margin-bottom: 15px;margin-top: 30%">
-						<van-field v-model.trim="name" type="text" label="账号" placeholder="请输入账号" />
+						<van-field v-model.trim="name" type="text" label="账号" placeholder="请输入账号" @keyup.native.enter="focusNext('pwdd')"/>
 					</van-col>
 					<van-col span="24" style="margin-bottom:5%;">
-						<van-field v-model.trim="pwd" type="password" label="密码" placeholder="请输入密码" />
+						<van-field v-model.trim="pwd" type="password" label="密码" placeholder="请输入密码" ref="pwdd" @keyup.enter="ui"/>
 					</van-col>
 					<van-col span="24" style="margin-bottom: 5px">
 						<van-button type="primary" size="large" @click="ui">{{register}}</van-button>
@@ -82,6 +82,9 @@
 					} else {
 						reg(this)
 					}
+				},
+				focusNext(nextRef) {
+					this.$refs[nextRef].focus()
 				}
 			}
 		})
@@ -120,7 +123,7 @@
 							location.href = 'index.html#/a3';
 						} else {
 							console.log('错误');
-							this.err=true;
+							that.err=true;
 							setTimeout(function (){
 								that.err=false;
 							},2000)
@@ -132,7 +135,7 @@
 					}
 				} else {
 					console.log('错误');
-					this.err=true;
+					that.err=true;
 					setTimeout(function (){
 						that.err=false;
 					},2000)
