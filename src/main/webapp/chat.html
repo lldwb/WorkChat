@@ -61,7 +61,7 @@
 			//接受方id
 			receiveId: getQueryVariable("receiveId"),
 			//输入的值
-			wordone: null,
+			wordone: '',
 			wordtwo: ''
 		},
 		mounted() {
@@ -103,26 +103,28 @@
 		methods: {
 			//定义点击发送按钮出发事件
 			sendmsg1() {
-				$.ajax({
-					url: "AddChat",
-					type: 'post',
-					//把输入框的内容发送到后台
-					data: {
-						//发送方id
-						userId: this.userId,
-						//接受方id
-						receiveId: this.receiveId,
-						//发送信息
-						word: this.wordone
-					},
-					success(result) {
-						console.log("成功");
-						vm.wordone = null;
-					},
-					error() {
-						console.log("失败")
-					}
-				})
+				if(this.wordone!=''){
+					$.ajax({
+						url: "AddChat",
+						type: 'post',
+						//把输入框的内容发送到后台
+						data: {
+							//发送方id
+							userId: this.userId,
+							//接受方id
+							receiveId: this.receiveId,
+							//发送信息
+							word: this.wordone
+						},
+						success(result) {
+							console.log("成功");
+							vm.wordone = '';
+						},
+						error() {
+							console.log("失败")
+						}
+					})
+				}
 			},
 			sendmsg2() {
 				// this.list.push({id:2,name:"wjb",content:this.wordtwo})
