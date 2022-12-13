@@ -9,7 +9,8 @@ Vue.component("myc",{
     methods:{
         ss (i){
             sj:this.$route.params.sj,
-            location.href = 'chat.html?receiveId='+sj[i].id;
+                // location.href = 'chat.html?receiveId='+sj[i].id;
+                location.href = 'chat.html?receiveId='+i;
         }
     },
     template :`
